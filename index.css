@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Tipografía base */
+  body {
+    @apply font-sans text-gris-700 bg-gris-50;
+  }
+
+  h1 {
+    @apply text-3xl font-bold text-gris-900;
+  }
+
+  h2 {
+    @apply text-2xl font-bold text-gris-800;
+  }
+
+  h3 {
+    @apply text-xl font-semibold text-gris-800;
+  }
+
+  h4 {
+    @apply text-lg font-semibold text-gris-700;
+  }
+
+  a {
+    @apply text-cacao-600 hover:text-cacao-700 transition-colors;
+  }
+}
+
+@layer components {
+  /* Botones */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 font-medium rounded-lg transition-all duration-200 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply btn bg-cacao-600 text-white hover:bg-cacao-700 active:bg-cacao-800 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gris-200 text-gris-800 hover:bg-gris-300 active:bg-gris-400;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-cacao-600 hover:bg-cacao-50 active:bg-cacao-100;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-lg;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+  }
+
+  .card-content {
+    @apply p-4;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full px-4 py-2 font-base border border-gris-300 rounded-lg transition-colors duration-200;
+  }
+
+  .input:focus {
+    @apply outline-none border-cacao-500 ring-2 ring-cacao-100;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-cacao-100 text-cacao-700;
+  }
+
+  .badge-success {
+    @apply badge bg-green-100 text-green-700;
+  }
+
+  .badge-warning {
+    @apply badge bg-yellow-100 text-yellow-700;
+  }
+
+  .badge-error {
+    @apply badge bg-red-100 text-red-700;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.3s ease-in-out;
+}
