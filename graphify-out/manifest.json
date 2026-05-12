@@ -1,0 +1,274 @@
+{
+  "/home/user/PROTOTIPOAVANZADO/create_vehicles_table.sql": {
+    "mtime": 1778552116.5293927,
+    "hash": "39f348b37a2dc72868f08d9ae2f4613e"
+  },
+  "/home/user/PROTOTIPOAVANZADO/read_pdf.py": {
+    "mtime": 1778552116.5373926,
+    "hash": "30e008b805437d7a8bbb0418c1be669d"
+  },
+  "/home/user/PROTOTIPOAVANZADO/fix_pt260333_inventory.sql": {
+    "mtime": 1778552116.5333927,
+    "hash": "964840eb804ab6915c6523697f38a781"
+  },
+  "/home/user/PROTOTIPOAVANZADO/setup_exportaciones.sql": {
+    "mtime": 1778552116.5413928,
+    "hash": "454254cd11ccb2f925e25957ebeb4294"
+  },
+  "/home/user/PROTOTIPOAVANZADO/ny_hedges_update.sql": {
+    "mtime": 1778552116.5373926,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/home/user/PROTOTIPOAVANZADO/alter_emptying_process.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "84dfad143f42c4d67dacc0d00672d9d2"
+  },
+  "/home/user/PROTOTIPOAVANZADO/fix_inventory_trigger.sql": {
+    "mtime": 1778552116.5333927,
+    "hash": "7802fed1017d3c2e7fc0734b8a09bb3b"
+  },
+  "/home/user/PROTOTIPOAVANZADO/create_reception_documents_table.sql": {
+    "mtime": 1778552116.5293927,
+    "hash": "3e50a2345a56b53b6e61e209c2f9739f"
+  },
+  "/home/user/PROTOTIPOAVANZADO/App.tsx": {
+    "mtime": 1778552116.5213928,
+    "hash": "74e007e27cb9aeef6af62fe53535f217"
+  },
+  "/home/user/PROTOTIPOAVANZADO/scratch_refactor_nclients.py": {
+    "mtime": 1778552116.5413928,
+    "hash": "a08c8ffe3c8e63c6e811e35534b0844e"
+  },
+  "/home/user/PROTOTIPOAVANZADO/alter_sacks_qty_type.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "58f3692d265400b0f0012c64b25180b8"
+  },
+  "/home/user/PROTOTIPOAVANZADO/promote_admin.sql": {
+    "mtime": 1778552116.5373926,
+    "hash": "6b132b5d5085cee0eef3403a3dd2d858"
+  },
+  "/home/user/PROTOTIPOAVANZADO/fix_database.sql": {
+    "mtime": 1778552116.5333927,
+    "hash": "7e2d10c504902bb471cb967ddcc884d3"
+  },
+  "/home/user/PROTOTIPOAVANZADO/add_batch_summary_column.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "cde692deaec44ebd9e8cc92fdcbdc3d2"
+  },
+  "/home/user/PROTOTIPOAVANZADO/check_samples_tables.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "9874c62b1eb42ea1fe19ff2610911892"
+  },
+  "/home/user/PROTOTIPOAVANZADO/check_inventory_triggers.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "0bb09ea340ef96c29605bccab7788373"
+  },
+  "/home/user/PROTOTIPOAVANZADO/fix_ny_hedges_columns.sql": {
+    "mtime": 1778552116.5333927,
+    "hash": "4ba9841a9a7559118520b461a75ce834"
+  },
+  "/home/user/PROTOTIPOAVANZADO/sustainable_procedures.sql": {
+    "mtime": 1778552116.5413928,
+    "hash": "d33b78969d0bb49fb971848ad9d769a8"
+  },
+  "/home/user/PROTOTIPOAVANZADO/setup_reception_documents_table_rls.sql": {
+    "mtime": 1778552116.5413928,
+    "hash": "c35ebaffbd81e6554cee63f34831710a"
+  },
+  "/home/user/PROTOTIPOAVANZADO/create_rtls_tables.sql": {
+    "mtime": 1778552116.5293927,
+    "hash": "0006cb3ce7e1eb56ebf9ade13221e956"
+  },
+  "/home/user/PROTOTIPOAVANZADO/create_vehicle_visits.sql": {
+    "mtime": 1778552116.5293927,
+    "hash": "85bc71369b619e91482854c00dec60f2"
+  },
+  "/home/user/PROTOTIPOAVANZADO/alter_security_checkins.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "fdddd3e1fbb09dcbadcfbd6c0c33ee44"
+  },
+  "/home/user/PROTOTIPOAVANZADO/vite.config.ts": {
+    "mtime": 1778552116.5413928,
+    "hash": "b02247fc15de1a3ff3a9cb4c1bbe3fa1"
+  },
+  "/home/user/PROTOTIPOAVANZADO/add_export_sack_weight.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "89c3ae0dde9a9a2781faa4ec14a9c596"
+  },
+  "/home/user/PROTOTIPOAVANZADO/db_migrations.sql": {
+    "mtime": 1778552116.5293927,
+    "hash": "181a4ad67ad88c23211a9c61ccce1385"
+  },
+  "/home/user/PROTOTIPOAVANZADO/enable_all_rls_safely.sql": {
+    "mtime": 1778552116.5333927,
+    "hash": "a255d88be9d693d5e649999866aa28b3"
+  },
+  "/home/user/PROTOTIPOAVANZADO/debug_sample_match.sql": {
+    "mtime": 1778552116.5293927,
+    "hash": "091acd5b998c8d288774891fd833e4ca"
+  },
+  "/home/user/PROTOTIPOAVANZADO/setup_comex_sacks.sql": {
+    "mtime": 1778552116.5413928,
+    "hash": "13df16d96857a183da8b883942c6a6ba"
+  },
+  "/home/user/PROTOTIPOAVANZADO/RecentRecipesFooter.tsx": {
+    "mtime": 1778552116.5213928,
+    "hash": "8e221a77a4135912becd05c2f19e8acf"
+  },
+  "/home/user/PROTOTIPOAVANZADO/constants.ts": {
+    "mtime": 1778552116.5253928,
+    "hash": "b93d2a68726ed088c51b1c9847cb001c"
+  },
+  "/home/user/PROTOTIPOAVANZADO/sustainable_capacity_logic.sql": {
+    "mtime": 1778552116.5413928,
+    "hash": "bee17ba019481924f73afe2a90cbc598"
+  },
+  "/home/user/PROTOTIPOAVANZADO/fix_inventory_weights.sql": {
+    "mtime": 1778552116.5333927,
+    "hash": "1ab33b9ac785944e882d990eeb0ec603"
+  },
+  "/home/user/PROTOTIPOAVANZADO/create_national_clients.sql": {
+    "mtime": 1778552116.5293927,
+    "hash": "a9a602f8e38e2a716aad0e1e8a475d46"
+  },
+  "/home/user/PROTOTIPOAVANZADO/risk_monitor_schema_updates.sql": {
+    "mtime": 1778552116.5373926,
+    "hash": "e2a25774e9076f9e64ba438238028088"
+  },
+  "/home/user/PROTOTIPOAVANZADO/sustainable_schema.sql": {
+    "mtime": 1778552116.5413928,
+    "hash": "cd5c073ffbb32482b15f0e9654389393"
+  },
+  "/home/user/PROTOTIPOAVANZADO/ny_hedges_schema.sql": {
+    "mtime": 1778552116.5373926,
+    "hash": "efd0f02ae1505d10210fd4e3e6a363f0"
+  },
+  "/home/user/PROTOTIPOAVANZADO/add_multi_reception_column.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "de587786fc4aee1b04461f8cf93622d7"
+  },
+  "/home/user/PROTOTIPOAVANZADO/fix_historical_transit.sql": {
+    "mtime": 1778552116.5333927,
+    "hash": "3e2a1578bb4f669e95b5cdc5815a00d5"
+  },
+  "/home/user/PROTOTIPOAVANZADO/create_waste_registry.sql": {
+    "mtime": 1778552116.5293927,
+    "hash": "0496875a9a36f7ba8d3ec101610cb035"
+  },
+  "/home/user/PROTOTIPOAVANZADO/setup_reception_documents_storage.sql": {
+    "mtime": 1778552116.5413928,
+    "hash": "71a9dec586d7c55ac3bdd4298ff06c6c"
+  },
+  "/home/user/PROTOTIPOAVANZADO/enable_rls_authenticated_level1.sql": {
+    "mtime": 1778552116.5333927,
+    "hash": "9675bfb658c9d8f36eef2676ccfee5aa"
+  },
+  "/home/user/PROTOTIPOAVANZADO/check_inventory_status.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "6432edc23c8ee970b7c98ece65534f6a"
+  },
+  "/home/user/PROTOTIPOAVANZADO/read_pdf.js": {
+    "mtime": 1778552116.5373926,
+    "hash": "1153a2344d1114a06e4d8e8c172c1dfb"
+  },
+  "/home/user/PROTOTIPOAVANZADO/supabaseClient.ts": {
+    "mtime": 1778552116.5413928,
+    "hash": "5333a99a022a5bd6f02f744864733b29"
+  },
+  "/home/user/PROTOTIPOAVANZADO/create_maquila_packaging_inventory_table.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "b07590fb9adc4a41b59ff54dd24a6f36"
+  },
+  "/home/user/PROTOTIPOAVANZADO/maquila_schema_updates.sql": {
+    "mtime": 1778552116.5333927,
+    "hash": "e165b2397be92c6dc05bfb8832d34bcd"
+  },
+  "/home/user/PROTOTIPOAVANZADO/maquila_fix_dependencies.sql": {
+    "mtime": 1778552116.5333927,
+    "hash": "e52af9adf14cf5ddae61d8f78fa44b45"
+  },
+  "/home/user/PROTOTIPOAVANZADO/create_maquila_inventory_table.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "a55c9dc1bea36b9df36635e6a4acb49d"
+  },
+  "/home/user/PROTOTIPOAVANZADO/SideNav.tsx": {
+    "mtime": 1778552116.5253928,
+    "hash": "cd3051b9e877da097d728318056499fd"
+  },
+  "/home/user/PROTOTIPOAVANZADO/add_maquila_flag.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "438a85abff34974fdf2c895ab4b8f25b"
+  },
+  "/home/user/PROTOTIPOAVANZADO/check_samples_data.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "060a66be3d2d490b041d6e837d99638c"
+  },
+  "/home/user/PROTOTIPOAVANZADO/create_national_sales_module.sql": {
+    "mtime": 1778552116.5293927,
+    "hash": "02b9a6b3120c9e29f8cf002ffdbf9730"
+  },
+  "/home/user/PROTOTIPOAVANZADO/create_maquila_sacks_management_tables.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "5c1e978e54a2028b7aa342001171ff92"
+  },
+  "/home/user/PROTOTIPOAVANZADO/add_security_checkin_column.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "13a706d78610aa3354a98e973ae7b5b0"
+  },
+  "/home/user/PROTOTIPOAVANZADO/sync_dispatch_inventory.sql": {
+    "mtime": 1778552116.5413928,
+    "hash": "ba95ab695abe078ce7ea1468641c647f"
+  },
+  "/home/user/PROTOTIPOAVANZADO/diagnose_pt_status.sql": {
+    "mtime": 1778552116.5293927,
+    "hash": "6ebefe04e9c6d9c266a92e1d303c6e4e"
+  },
+  "/home/user/PROTOTIPOAVANZADO/fix_inventory_status_constraint.sql": {
+    "mtime": 1778552116.5333927,
+    "hash": "52e834471b8c1a3b410421146004d75f"
+  },
+  "/home/user/PROTOTIPOAVANZADO/index.tsx": {
+    "mtime": 1778552116.5333927,
+    "hash": "4f9d0a7096ddad7c3bf33fd8d73f7d70"
+  },
+  "/home/user/PROTOTIPOAVANZADO/types.ts": {
+    "mtime": 1778552116.5413928,
+    "hash": "6abda35b5846e2b76ca2d0c31b9c66c2"
+  },
+  "/home/user/PROTOTIPOAVANZADO/diagnose_missing_lots.sql": {
+    "mtime": 1778552116.5293927,
+    "hash": "dae8bfe718ebd1fe0f8907ae3b69b68b"
+  },
+  "/home/user/PROTOTIPOAVANZADO/add_cadmium_to_clients.sql": {
+    "mtime": 1778552116.5253928,
+    "hash": "4175526b2c93f735ad19b18f31426611"
+  },
+  "/home/user/PROTOTIPOAVANZADO/documentacion_consolidada.md": {
+    "mtime": 1778552116.5333927,
+    "hash": "dcfd8ea63131fcd01bd20fba01a9e5ef"
+  },
+  "/home/user/PROTOTIPOAVANZADO/pdf_text_py.txt": {
+    "mtime": 1778552116.5373926,
+    "hash": "936ed2f575900bf66b7a4c7accfdf8ca"
+  },
+  "/home/user/PROTOTIPOAVANZADO/pdf_out.txt": {
+    "mtime": 1778552116.5373926,
+    "hash": "2fb8ad5a77544c7152ef162ab2bef5a6"
+  },
+  "/home/user/PROTOTIPOAVANZADO/README.md": {
+    "mtime": 1778552116.5213928,
+    "hash": "579f3ea3e39e6ab50327398246ba2967"
+  },
+  "/home/user/PROTOTIPOAVANZADO/index.html": {
+    "mtime": 1778552116.5333927,
+    "hash": "810d49137643d5b81c32636a9138bfff"
+  },
+  "/home/user/PROTOTIPOAVANZADO/CLAUDE.md": {
+    "mtime": 1778588373.1296544,
+    "hash": "da79aa9343cd2b362206f03762160abc"
+  },
+  "/home/user/PROTOTIPOAVANZADO/READMECLE.pdf": {
+    "mtime": 1778552116.5213928,
+    "hash": "5a42619fdbfe29e2f8612c9ebd7e71b7"
+  }
+}

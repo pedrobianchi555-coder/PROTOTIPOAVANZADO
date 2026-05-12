@@ -1,0 +1,1945 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "read_pdf.py",
+      "file_type": "code",
+      "source_file": "read_pdf.py",
+      "source_location": "L1",
+      "id": "read_pdf_py",
+      "community": 6,
+      "norm_label": "read_pdf.py"
+    },
+    {
+      "label": "App.tsx",
+      "file_type": "code",
+      "source_file": "App.tsx",
+      "source_location": "L1",
+      "id": "app_tsx",
+      "community": 1,
+      "norm_label": "app.tsx"
+    },
+    {
+      "label": "AppContent()",
+      "file_type": "code",
+      "source_file": "App.tsx",
+      "source_location": "L76",
+      "id": "prototipoavanzado_app_appcontent",
+      "community": 1,
+      "norm_label": "appcontent()"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "App.tsx",
+      "source_location": "L286",
+      "id": "prototipoavanzado_app_app",
+      "community": 1,
+      "norm_label": "app()"
+    },
+    {
+      "label": "scratch_refactor_nclients.py",
+      "file_type": "code",
+      "source_file": "scratch_refactor_nclients.py",
+      "source_location": "L1",
+      "id": "scratch_refactor_nclients_py",
+      "community": 7,
+      "norm_label": "scratch_refactor_nclients.py"
+    },
+    {
+      "label": "vite.config.ts",
+      "file_type": "code",
+      "source_file": "vite.config.ts",
+      "source_location": "L1",
+      "id": "vite_config_ts",
+      "community": 5,
+      "norm_label": "vite.config.ts"
+    },
+    {
+      "label": "env",
+      "file_type": "code",
+      "source_file": "vite.config.ts",
+      "source_location": "L6",
+      "id": "prototipoavanzado_vite_config_env",
+      "community": 5,
+      "norm_label": "env"
+    },
+    {
+      "label": "RecentRecipesFooter.tsx",
+      "file_type": "code",
+      "source_file": "RecentRecipesFooter.tsx",
+      "source_location": "L1",
+      "id": "recentrecipesfooter_tsx",
+      "community": 3,
+      "norm_label": "recentrecipesfooter.tsx"
+    },
+    {
+      "label": "constants.ts",
+      "file_type": "code",
+      "source_file": "constants.ts",
+      "source_location": "L1",
+      "id": "constants_ts",
+      "community": 2,
+      "norm_label": "constants.ts"
+    },
+    {
+      "label": "LIMITS",
+      "file_type": "code",
+      "source_file": "constants.ts",
+      "source_location": "L4",
+      "id": "prototipoavanzado_constants_limits",
+      "community": 2,
+      "norm_label": "limits"
+    },
+    {
+      "label": "createInitialRecipe()",
+      "file_type": "code",
+      "source_file": "constants.ts",
+      "source_location": "L11",
+      "id": "prototipoavanzado_constants_createinitialrecipe",
+      "community": 2,
+      "norm_label": "createinitialrecipe()"
+    },
+    {
+      "label": "INSTRUCTION_TEMPLATES",
+      "file_type": "code",
+      "source_file": "constants.ts",
+      "source_location": "L38",
+      "id": "prototipoavanzado_constants_instruction_templates",
+      "community": 2,
+      "norm_label": "instruction_templates"
+    },
+    {
+      "label": "read_pdf.js",
+      "file_type": "code",
+      "source_file": "read_pdf.js",
+      "source_location": "L1",
+      "id": "read_pdf_js",
+      "community": 4,
+      "norm_label": "read_pdf.js"
+    },
+    {
+      "label": "fs",
+      "file_type": "code",
+      "source_file": "read_pdf.js",
+      "source_location": "L1",
+      "id": "prototipoavanzado_read_pdf_fs",
+      "community": 4,
+      "norm_label": "fs"
+    },
+    {
+      "label": "pdf",
+      "file_type": "code",
+      "source_file": "read_pdf.js",
+      "source_location": "L2",
+      "id": "prototipoavanzado_read_pdf_pdf",
+      "community": 4,
+      "norm_label": "pdf"
+    },
+    {
+      "label": "dataBuffer",
+      "file_type": "code",
+      "source_file": "read_pdf.js",
+      "source_location": "L3",
+      "id": "prototipoavanzado_read_pdf_databuffer",
+      "community": 4,
+      "norm_label": "databuffer"
+    },
+    {
+      "label": "supabaseClient.ts",
+      "file_type": "code",
+      "source_file": "supabaseClient.ts",
+      "source_location": "L1",
+      "id": "supabaseclient_ts",
+      "community": 1,
+      "norm_label": "supabaseclient.ts"
+    },
+    {
+      "label": "supabase",
+      "file_type": "code",
+      "source_file": "supabaseClient.ts",
+      "source_location": "L6",
+      "id": "prototipoavanzado_supabaseclient_supabase",
+      "community": 1,
+      "norm_label": "supabase"
+    },
+    {
+      "label": "SideNav.tsx",
+      "file_type": "code",
+      "source_file": "SideNav.tsx",
+      "source_location": "L1",
+      "id": "sidenav_tsx",
+      "community": 3,
+      "norm_label": "sidenav.tsx"
+    },
+    {
+      "label": "Props",
+      "file_type": "code",
+      "source_file": "SideNav.tsx",
+      "source_location": "L45",
+      "id": "prototipoavanzado_sidenav_props",
+      "community": 3,
+      "norm_label": "props"
+    },
+    {
+      "label": "MenuItem",
+      "file_type": "code",
+      "source_file": "SideNav.tsx",
+      "source_location": "L54",
+      "id": "prototipoavanzado_sidenav_menuitem",
+      "community": 3,
+      "norm_label": "menuitem"
+    },
+    {
+      "label": "MenuGroup",
+      "file_type": "code",
+      "source_file": "SideNav.tsx",
+      "source_location": "L61",
+      "id": "prototipoavanzado_sidenav_menugroup",
+      "community": 3,
+      "norm_label": "menugroup"
+    },
+    {
+      "label": "index.tsx",
+      "file_type": "code",
+      "source_file": "index.tsx",
+      "source_location": "L1",
+      "id": "index_tsx",
+      "community": 1,
+      "norm_label": "index.tsx"
+    },
+    {
+      "label": "rootElement",
+      "file_type": "code",
+      "source_file": "index.tsx",
+      "source_location": "L5",
+      "id": "prototipoavanzado_index_rootelement",
+      "community": 1,
+      "norm_label": "rootelement"
+    },
+    {
+      "label": "root",
+      "file_type": "code",
+      "source_file": "index.tsx",
+      "source_location": "L10",
+      "id": "prototipoavanzado_index_root",
+      "community": 1,
+      "norm_label": "root"
+    },
+    {
+      "label": "types.ts",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1",
+      "id": "types_ts",
+      "community": 0,
+      "norm_label": "types.ts"
+    },
+    {
+      "label": "UserRole",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L2",
+      "id": "prototipoavanzado_types_userrole",
+      "community": 2,
+      "norm_label": "userrole"
+    },
+    {
+      "label": "RecipeStatus",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L11",
+      "id": "prototipoavanzado_types_recipestatus",
+      "community": 2,
+      "norm_label": "recipestatus"
+    },
+    {
+      "label": "Ingredient",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L17",
+      "id": "prototipoavanzado_types_ingredient",
+      "community": 0,
+      "norm_label": "ingredient"
+    },
+    {
+      "label": "VehicleVisit",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L28",
+      "id": "prototipoavanzado_types_vehiclevisit",
+      "community": 0,
+      "norm_label": "vehiclevisit"
+    },
+    {
+      "label": "SecurityCheckin",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L46",
+      "id": "prototipoavanzado_types_securitycheckin",
+      "community": 0,
+      "norm_label": "securitycheckin"
+    },
+    {
+      "label": "SecurityCheckinPallet",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L79",
+      "id": "prototipoavanzado_types_securitycheckinpallet",
+      "community": 0,
+      "norm_label": "securitycheckinpallet"
+    },
+    {
+      "label": "Supplier",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L91",
+      "id": "prototipoavanzado_types_supplier",
+      "community": 0,
+      "norm_label": "supplier"
+    },
+    {
+      "label": "TraceabilityAssignment",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L121",
+      "id": "prototipoavanzado_types_traceabilityassignment",
+      "community": 0,
+      "norm_label": "traceabilityassignment"
+    },
+    {
+      "label": "Recipe",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L131",
+      "id": "prototipoavanzado_types_recipe",
+      "community": 2,
+      "norm_label": "recipe"
+    },
+    {
+      "label": "Sample",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L157",
+      "id": "prototipoavanzado_types_sample",
+      "community": 0,
+      "norm_label": "sample"
+    },
+    {
+      "label": "ClientContract",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L187",
+      "id": "prototipoavanzado_types_clientcontract",
+      "community": 0,
+      "norm_label": "clientcontract"
+    },
+    {
+      "label": "Reception",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L207",
+      "id": "prototipoavanzado_types_reception",
+      "community": 0,
+      "norm_label": "reception"
+    },
+    {
+      "label": "DetailedQualityAnalysis",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L257",
+      "id": "prototipoavanzado_types_detailedqualityanalysis",
+      "community": 0,
+      "norm_label": "detailedqualityanalysis"
+    },
+    {
+      "label": "QualityControlRecord",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L282",
+      "id": "prototipoavanzado_types_qualitycontrolrecord",
+      "community": 0,
+      "norm_label": "qualitycontrolrecord"
+    },
+    {
+      "label": "PalletQualityData",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L291",
+      "id": "prototipoavanzado_types_palletqualitydata",
+      "community": 0,
+      "norm_label": "palletqualitydata"
+    },
+    {
+      "label": "QualityCut",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L296",
+      "id": "prototipoavanzado_types_qualitycut",
+      "community": 0,
+      "norm_label": "qualitycut"
+    },
+    {
+      "label": "MachineryMatrix",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L308",
+      "id": "prototipoavanzado_types_machinerymatrix",
+      "community": 0,
+      "norm_label": "machinerymatrix"
+    },
+    {
+      "label": "EmptyingRecord",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L318",
+      "id": "prototipoavanzado_types_emptyingrecord",
+      "community": 0,
+      "norm_label": "emptyingrecord"
+    },
+    {
+      "label": "MachineryChecklist",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L335",
+      "id": "prototipoavanzado_types_machinerychecklist",
+      "community": 0,
+      "norm_label": "machinerychecklist"
+    },
+    {
+      "label": "EmptyingDetail",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L343",
+      "id": "prototipoavanzado_types_emptyingdetail",
+      "community": 0,
+      "norm_label": "emptyingdetail"
+    },
+    {
+      "label": "TraceabilityData",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L355",
+      "id": "prototipoavanzado_types_traceabilitydata",
+      "community": 0,
+      "norm_label": "traceabilitydata"
+    },
+    {
+      "label": "Cobranza",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L546",
+      "id": "prototipoavanzado_types_cobranza",
+      "community": 0,
+      "norm_label": "cobranza"
+    },
+    {
+      "label": "MaquilaProcess",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L563",
+      "id": "prototipoavanzado_types_maquilaprocess",
+      "community": 0,
+      "norm_label": "maquilaprocess"
+    },
+    {
+      "label": "MaquilaReturn",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L591",
+      "id": "prototipoavanzado_types_maquilareturn",
+      "community": 0,
+      "norm_label": "maquilareturn"
+    },
+    {
+      "label": "MaquilaInventory",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L607",
+      "id": "prototipoavanzado_types_maquilainventory",
+      "community": 0,
+      "norm_label": "maquilainventory"
+    },
+    {
+      "label": "LabSampleDelivery",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L622",
+      "id": "prototipoavanzado_types_labsampledelivery",
+      "community": 0,
+      "norm_label": "labsampledelivery"
+    },
+    {
+      "label": "NonCommercialItem",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L637",
+      "id": "prototipoavanzado_types_noncommercialitem",
+      "community": 0,
+      "norm_label": "noncommercialitem"
+    },
+    {
+      "label": "PrimaryProductionRow",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L642",
+      "id": "prototipoavanzado_types_primaryproductionrow",
+      "community": 0,
+      "norm_label": "primaryproductionrow"
+    },
+    {
+      "label": "SystemNotification",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L647",
+      "id": "prototipoavanzado_types_systemnotification",
+      "community": 0,
+      "norm_label": "systemnotification"
+    },
+    {
+      "label": "ExchangeRate",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L659",
+      "id": "prototipoavanzado_types_exchangerate",
+      "community": 0,
+      "norm_label": "exchangerate"
+    },
+    {
+      "label": "LogisticsPlanning",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L668",
+      "id": "prototipoavanzado_types_logisticsplanning",
+      "community": 0,
+      "norm_label": "logisticsplanning"
+    },
+    {
+      "label": "WeeklyForecast",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L685",
+      "id": "prototipoavanzado_types_weeklyforecast",
+      "community": 0,
+      "norm_label": "weeklyforecast"
+    },
+    {
+      "label": "TransportDispatch",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L698",
+      "id": "prototipoavanzado_types_transportdispatch",
+      "community": 0,
+      "norm_label": "transportdispatch"
+    },
+    {
+      "label": "TransportUnit",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L720",
+      "id": "prototipoavanzado_types_transportunit",
+      "community": 0,
+      "norm_label": "transportunit"
+    },
+    {
+      "label": "TransportDriver",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L733",
+      "id": "prototipoavanzado_types_transportdriver",
+      "community": 0,
+      "norm_label": "transportdriver"
+    },
+    {
+      "label": "NewBatchData",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L745",
+      "id": "prototipoavanzado_types_newbatchdata",
+      "community": 0,
+      "norm_label": "newbatchdata"
+    },
+    {
+      "label": "ProductionOrder",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L777",
+      "id": "prototipoavanzado_types_productionorder",
+      "community": 0,
+      "norm_label": "productionorder"
+    },
+    {
+      "label": "ProductionBatchResult",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L826",
+      "id": "prototipoavanzado_types_productionbatchresult",
+      "community": 0,
+      "norm_label": "productionbatchresult"
+    },
+    {
+      "label": "PurchaseOrder",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L858",
+      "id": "prototipoavanzado_types_purchaseorder",
+      "community": 0,
+      "norm_label": "purchaseorder"
+    },
+    {
+      "label": "CocoaBatch",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L886",
+      "id": "prototipoavanzado_types_cocoabatch",
+      "community": 0,
+      "norm_label": "cocoabatch"
+    },
+    {
+      "label": "SackTransaction",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L894",
+      "id": "prototipoavanzado_types_sacktransaction",
+      "community": 0,
+      "norm_label": "sacktransaction"
+    },
+    {
+      "label": "Warehouse",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L908",
+      "id": "prototipoavanzado_types_warehouse",
+      "community": 0,
+      "norm_label": "warehouse"
+    },
+    {
+      "label": "LogisticsRate",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L916",
+      "id": "prototipoavanzado_types_logisticsrate",
+      "community": 0,
+      "norm_label": "logisticsrate"
+    },
+    {
+      "label": "StevedoreProvider",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L925",
+      "id": "prototipoavanzado_types_stevedoreprovider",
+      "community": 0,
+      "norm_label": "stevedoreprovider"
+    },
+    {
+      "label": "LogisticsRoute",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L933",
+      "id": "prototipoavanzado_types_logisticsroute",
+      "community": 0,
+      "norm_label": "logisticsroute"
+    },
+    {
+      "label": "RouteCostHistory",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L943",
+      "id": "prototipoavanzado_types_routecosthistory",
+      "community": 0,
+      "norm_label": "routecosthistory"
+    },
+    {
+      "label": "SystemLog",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L951",
+      "id": "prototipoavanzado_types_systemlog",
+      "community": 0,
+      "norm_label": "systemlog"
+    },
+    {
+      "label": "UserProfile",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L963",
+      "id": "prototipoavanzado_types_userprofile",
+      "community": 0,
+      "norm_label": "userprofile"
+    },
+    {
+      "label": "Client",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L970",
+      "id": "prototipoavanzado_types_client",
+      "community": 0,
+      "norm_label": "client"
+    },
+    {
+      "label": "NyHedge",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L979",
+      "id": "prototipoavanzado_types_nyhedge",
+      "community": 0,
+      "norm_label": "nyhedge"
+    },
+    {
+      "label": "SystemSetting",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1008",
+      "id": "prototipoavanzado_types_systemsetting",
+      "community": 0,
+      "norm_label": "systemsetting"
+    },
+    {
+      "label": "RiskSnapshot",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1016",
+      "id": "prototipoavanzado_types_risksnapshot",
+      "community": 0,
+      "norm_label": "risksnapshot"
+    },
+    {
+      "label": "SensoryAnalysis",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1029",
+      "id": "prototipoavanzado_types_sensoryanalysis",
+      "community": 0,
+      "norm_label": "sensoryanalysis"
+    },
+    {
+      "label": "PanelistData",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1039",
+      "id": "prototipoavanzado_types_panelistdata",
+      "community": 0,
+      "norm_label": "panelistdata"
+    },
+    {
+      "label": "SecurityEscort",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1044",
+      "id": "prototipoavanzado_types_securityescort",
+      "community": 0,
+      "norm_label": "securityescort"
+    },
+    {
+      "label": "PaymentOrder",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1054",
+      "id": "prototipoavanzado_types_paymentorder",
+      "community": 0,
+      "norm_label": "paymentorder"
+    },
+    {
+      "label": "ExportShipment",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1071",
+      "id": "prototipoavanzado_types_exportshipment",
+      "community": 0,
+      "norm_label": "exportshipment"
+    },
+    {
+      "label": "ExportCost",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1089",
+      "id": "prototipoavanzado_types_exportcost",
+      "community": 0,
+      "norm_label": "exportcost"
+    },
+    {
+      "label": "ComexSupply",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1107",
+      "id": "prototipoavanzado_types_comexsupply",
+      "community": 0,
+      "norm_label": "comexsupply"
+    },
+    {
+      "label": "NationalSale",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1114",
+      "id": "prototipoavanzado_types_nationalsale",
+      "community": 0,
+      "norm_label": "nationalsale"
+    },
+    {
+      "label": "ExportDocument",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1130",
+      "id": "prototipoavanzado_types_exportdocument",
+      "community": 0,
+      "norm_label": "exportdocument"
+    },
+    {
+      "label": "PettyCashTransaction",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1139",
+      "id": "prototipoavanzado_types_pettycashtransaction",
+      "community": 0,
+      "norm_label": "pettycashtransaction"
+    },
+    {
+      "label": "Fixation",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1148",
+      "id": "prototipoavanzado_types_fixation",
+      "community": 0,
+      "norm_label": "fixation"
+    },
+    {
+      "label": "DispatchPallet",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1164",
+      "id": "prototipoavanzado_types_dispatchpallet",
+      "community": 0,
+      "norm_label": "dispatchpallet"
+    },
+    {
+      "label": "Exportacion",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1171",
+      "id": "prototipoavanzado_types_exportacion",
+      "community": 0,
+      "norm_label": "exportacion"
+    },
+    {
+      "label": "WasteSourceType",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1214",
+      "id": "prototipoavanzado_types_wastesourcetype",
+      "community": 0,
+      "norm_label": "wastesourcetype"
+    },
+    {
+      "label": "WasteCategory",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1215",
+      "id": "prototipoavanzado_types_wastecategory",
+      "community": 0,
+      "norm_label": "wastecategory"
+    },
+    {
+      "label": "WasteRegistryEntry",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1217",
+      "id": "prototipoavanzado_types_wasteregistryentry",
+      "community": 0,
+      "norm_label": "wasteregistryentry"
+    },
+    {
+      "label": "CommercialAgreement",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1235",
+      "id": "prototipoavanzado_types_commercialagreement",
+      "community": 0,
+      "norm_label": "commercialagreement"
+    },
+    {
+      "label": "SensorialSession",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1258",
+      "id": "prototipoavanzado_types_sensorialsession",
+      "community": 0,
+      "norm_label": "sensorialsession"
+    },
+    {
+      "label": "SensorialLot",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1273",
+      "id": "prototipoavanzado_types_sensoriallot",
+      "community": 0,
+      "norm_label": "sensoriallot"
+    },
+    {
+      "label": "SensorialEvaluation",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1287",
+      "id": "prototipoavanzado_types_sensorialevaluation",
+      "community": 0,
+      "norm_label": "sensorialevaluation"
+    },
+    {
+      "label": "PalletBeacon",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1303",
+      "id": "prototipoavanzado_types_palletbeacon",
+      "community": 0,
+      "norm_label": "palletbeacon"
+    },
+    {
+      "label": "CLEMapResponse",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1311",
+      "id": "prototipoavanzado_types_clemapresponse",
+      "community": 0,
+      "norm_label": "clemapresponse"
+    },
+    {
+      "label": "CLEModelBase64Response",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1323",
+      "id": "prototipoavanzado_types_clemodelbase64response",
+      "community": 0,
+      "norm_label": "clemodelbase64response"
+    },
+    {
+      "label": "CLEBeacon",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1327",
+      "id": "prototipoavanzado_types_clebeacon",
+      "community": 0,
+      "norm_label": "clebeacon"
+    },
+    {
+      "label": "NationalClient",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1356",
+      "id": "prototipoavanzado_types_nationalclient",
+      "community": 0,
+      "norm_label": "nationalclient"
+    }
+  ],
+  "links": [
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_tsx",
+      "target": "supabaseclient_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_tsx",
+      "target": "prototipoavanzado_supabaseclient_supabase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "App.tsx",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "app_tsx",
+      "target": "prototipoavanzado_app_appcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "App.tsx",
+      "source_location": "L286",
+      "weight": 1.0,
+      "source": "app_tsx",
+      "target": "prototipoavanzado_app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "index.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "index_tsx",
+      "target": "app_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vite.config.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "vite_config_ts",
+      "target": "prototipoavanzado_vite_config_env",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "RecentRecipesFooter.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "recentrecipesfooter_tsx",
+      "target": "prototipoavanzado_sidenav_props",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "constants.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "constants_ts",
+      "target": "types_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "constants.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "constants_ts",
+      "target": "prototipoavanzado_types_recipe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "constants.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "constants_ts",
+      "target": "prototipoavanzado_types_recipestatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "constants.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "constants_ts",
+      "target": "prototipoavanzado_types_userrole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "constants.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "constants_ts",
+      "target": "prototipoavanzado_constants_limits",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "constants.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "constants_ts",
+      "target": "prototipoavanzado_constants_createinitialrecipe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "constants.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "constants_ts",
+      "target": "prototipoavanzado_constants_instruction_templates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "read_pdf.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "read_pdf_js",
+      "target": "prototipoavanzado_read_pdf_fs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "read_pdf.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "read_pdf_js",
+      "target": "prototipoavanzado_read_pdf_pdf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "read_pdf.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "read_pdf_js",
+      "target": "prototipoavanzado_read_pdf_databuffer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "supabaseClient.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "supabaseclient_ts",
+      "target": "prototipoavanzado_supabaseclient_supabase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SideNav.tsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "sidenav_tsx",
+      "target": "prototipoavanzado_sidenav_props",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SideNav.tsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "sidenav_tsx",
+      "target": "prototipoavanzado_sidenav_menuitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SideNav.tsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "sidenav_tsx",
+      "target": "prototipoavanzado_sidenav_menugroup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "index.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "index_tsx",
+      "target": "prototipoavanzado_index_rootelement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "index.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "index_tsx",
+      "target": "prototipoavanzado_index_root",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_userrole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_recipestatus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_ingredient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_vehiclevisit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_securitycheckin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_securitycheckinpallet",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_supplier",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_traceabilityassignment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_recipe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L157",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_sample",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L187",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_clientcontract",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L207",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_reception",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L257",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_detailedqualityanalysis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L282",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_qualitycontrolrecord",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L291",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_palletqualitydata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L296",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_qualitycut",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L308",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_machinerymatrix",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L318",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_emptyingrecord",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L335",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_machinerychecklist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L343",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_emptyingdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L355",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_traceabilitydata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L546",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_cobranza",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L563",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_maquilaprocess",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L591",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_maquilareturn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L607",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_maquilainventory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L622",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_labsampledelivery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L637",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_noncommercialitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L642",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_primaryproductionrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L647",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_systemnotification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L659",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_exchangerate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L668",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_logisticsplanning",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L685",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_weeklyforecast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L698",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_transportdispatch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L720",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_transportunit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L733",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_transportdriver",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L745",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_newbatchdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L777",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_productionorder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L826",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_productionbatchresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L858",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_purchaseorder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L886",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_cocoabatch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1340",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_sacktransaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L908",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_warehouse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L916",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_logisticsrate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L925",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_stevedoreprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L933",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_logisticsroute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L943",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_routecosthistory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L951",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_systemlog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L963",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_userprofile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1203",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L979",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_nyhedge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1008",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_systemsetting",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1016",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_risksnapshot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1029",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_sensoryanalysis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1039",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_panelistdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1044",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_securityescort",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1054",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_paymentorder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1071",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_exportshipment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1089",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_exportcost",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1107",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_comexsupply",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1114",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_nationalsale",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1130",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_exportdocument",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1139",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_pettycashtransaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1148",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_fixation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1164",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_dispatchpallet",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1171",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_exportacion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1214",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_wastesourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1215",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_wastecategory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1217",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_wasteregistryentry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1235",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_commercialagreement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1258",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_sensorialsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1273",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_sensoriallot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1287",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_sensorialevaluation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1303",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_palletbeacon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1311",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_clemapresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1323",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_clemodelbase64response",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1327",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_clebeacon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1356",
+      "weight": 1.0,
+      "source": "types_ts",
+      "target": "prototipoavanzado_types_nationalclient",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "914ce38d813507bdeef56c35ebe9460fed25601b"
+}

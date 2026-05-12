@@ -1,0 +1,190 @@
+{
+  "communities": {
+    "0": [
+      "prototipoavanzado_types_clebeacon",
+      "prototipoavanzado_types_clemapresponse",
+      "prototipoavanzado_types_clemodelbase64response",
+      "prototipoavanzado_types_client",
+      "prototipoavanzado_types_clientcontract",
+      "prototipoavanzado_types_cobranza",
+      "prototipoavanzado_types_cocoabatch",
+      "prototipoavanzado_types_comexsupply",
+      "prototipoavanzado_types_commercialagreement",
+      "prototipoavanzado_types_detailedqualityanalysis",
+      "prototipoavanzado_types_dispatchpallet",
+      "prototipoavanzado_types_emptyingdetail",
+      "prototipoavanzado_types_emptyingrecord",
+      "prototipoavanzado_types_exchangerate",
+      "prototipoavanzado_types_exportacion",
+      "prototipoavanzado_types_exportcost",
+      "prototipoavanzado_types_exportdocument",
+      "prototipoavanzado_types_exportshipment",
+      "prototipoavanzado_types_fixation",
+      "prototipoavanzado_types_ingredient",
+      "prototipoavanzado_types_labsampledelivery",
+      "prototipoavanzado_types_logisticsplanning",
+      "prototipoavanzado_types_logisticsrate",
+      "prototipoavanzado_types_logisticsroute",
+      "prototipoavanzado_types_machinerychecklist",
+      "prototipoavanzado_types_machinerymatrix",
+      "prototipoavanzado_types_maquilainventory",
+      "prototipoavanzado_types_maquilaprocess",
+      "prototipoavanzado_types_maquilareturn",
+      "prototipoavanzado_types_nationalclient",
+      "prototipoavanzado_types_nationalsale",
+      "prototipoavanzado_types_newbatchdata",
+      "prototipoavanzado_types_noncommercialitem",
+      "prototipoavanzado_types_nyhedge",
+      "prototipoavanzado_types_palletbeacon",
+      "prototipoavanzado_types_palletqualitydata",
+      "prototipoavanzado_types_panelistdata",
+      "prototipoavanzado_types_paymentorder",
+      "prototipoavanzado_types_pettycashtransaction",
+      "prototipoavanzado_types_primaryproductionrow",
+      "prototipoavanzado_types_productionbatchresult",
+      "prototipoavanzado_types_productionorder",
+      "prototipoavanzado_types_purchaseorder",
+      "prototipoavanzado_types_qualitycontrolrecord",
+      "prototipoavanzado_types_qualitycut",
+      "prototipoavanzado_types_reception",
+      "prototipoavanzado_types_risksnapshot",
+      "prototipoavanzado_types_routecosthistory",
+      "prototipoavanzado_types_sacktransaction",
+      "prototipoavanzado_types_sample",
+      "prototipoavanzado_types_securitycheckin",
+      "prototipoavanzado_types_securitycheckinpallet",
+      "prototipoavanzado_types_securityescort",
+      "prototipoavanzado_types_sensorialevaluation",
+      "prototipoavanzado_types_sensoriallot",
+      "prototipoavanzado_types_sensorialsession",
+      "prototipoavanzado_types_sensoryanalysis",
+      "prototipoavanzado_types_stevedoreprovider",
+      "prototipoavanzado_types_supplier",
+      "prototipoavanzado_types_systemlog",
+      "prototipoavanzado_types_systemnotification",
+      "prototipoavanzado_types_systemsetting",
+      "prototipoavanzado_types_traceabilityassignment",
+      "prototipoavanzado_types_traceabilitydata",
+      "prototipoavanzado_types_transportdispatch",
+      "prototipoavanzado_types_transportdriver",
+      "prototipoavanzado_types_transportunit",
+      "prototipoavanzado_types_userprofile",
+      "prototipoavanzado_types_vehiclevisit",
+      "prototipoavanzado_types_warehouse",
+      "prototipoavanzado_types_wastecategory",
+      "prototipoavanzado_types_wasteregistryentry",
+      "prototipoavanzado_types_wastesourcetype",
+      "prototipoavanzado_types_weeklyforecast",
+      "types_ts"
+    ],
+    "1": [
+      "app_tsx",
+      "index_tsx",
+      "prototipoavanzado_app_app",
+      "prototipoavanzado_app_appcontent",
+      "prototipoavanzado_index_root",
+      "prototipoavanzado_index_rootelement",
+      "prototipoavanzado_supabaseclient_supabase",
+      "supabaseclient_ts"
+    ],
+    "2": [
+      "constants_ts",
+      "prototipoavanzado_constants_createinitialrecipe",
+      "prototipoavanzado_constants_instruction_templates",
+      "prototipoavanzado_constants_limits",
+      "prototipoavanzado_types_recipe",
+      "prototipoavanzado_types_recipestatus",
+      "prototipoavanzado_types_userrole"
+    ],
+    "3": [
+      "prototipoavanzado_sidenav_menugroup",
+      "prototipoavanzado_sidenav_menuitem",
+      "prototipoavanzado_sidenav_props",
+      "recentrecipesfooter_tsx",
+      "sidenav_tsx"
+    ],
+    "4": [
+      "prototipoavanzado_read_pdf_databuffer",
+      "prototipoavanzado_read_pdf_fs",
+      "prototipoavanzado_read_pdf_pdf",
+      "read_pdf_js"
+    ],
+    "5": [
+      "prototipoavanzado_vite_config_env",
+      "vite_config_ts"
+    ],
+    "6": [
+      "read_pdf_py"
+    ],
+    "7": [
+      "scratch_refactor_nclients_py"
+    ]
+  },
+  "cohesion": {
+    "0": 0.03,
+    "1": 0.29,
+    "2": 0.29,
+    "3": 0.4,
+    "4": 0.5,
+    "5": 1.0,
+    "6": 1.0,
+    "7": 1.0
+  },
+  "gods": [
+    {
+      "id": "prototipoavanzado_supabaseclient_supabase",
+      "label": "supabase",
+      "degree": 2
+    },
+    {
+      "id": "prototipoavanzado_sidenav_props",
+      "label": "Props",
+      "degree": 2
+    },
+    {
+      "id": "prototipoavanzado_types_userrole",
+      "label": "UserRole",
+      "degree": 2
+    },
+    {
+      "id": "prototipoavanzado_types_recipestatus",
+      "label": "RecipeStatus",
+      "degree": 2
+    },
+    {
+      "id": "prototipoavanzado_types_recipe",
+      "label": "Recipe",
+      "degree": 2
+    },
+    {
+      "id": "prototipoavanzado_vite_config_env",
+      "label": "env",
+      "degree": 1
+    },
+    {
+      "id": "prototipoavanzado_constants_limits",
+      "label": "LIMITS",
+      "degree": 1
+    },
+    {
+      "id": "prototipoavanzado_constants_instruction_templates",
+      "label": "INSTRUCTION_TEMPLATES",
+      "degree": 1
+    },
+    {
+      "id": "prototipoavanzado_read_pdf_fs",
+      "label": "fs",
+      "degree": 1
+    },
+    {
+      "id": "prototipoavanzado_read_pdf_pdf",
+      "label": "pdf",
+      "degree": 1
+    }
+  ],
+  "surprises": [],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
