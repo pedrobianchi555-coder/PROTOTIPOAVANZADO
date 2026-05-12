@@ -19,3 +19,9 @@ export { Alert, Toast, Modal } from './Alert';
 // Navigation Components
 export { Pagination } from './Pagination';
 export { SearchFilter } from './SearchFilter';
+
+// Theme
+export { ThemeToggle } from './ThemeToggle';
+
+// Charts
+export { CustomLineChart, CustomBarChart, CustomPieChart, CustomAreaChart } from './Charts';

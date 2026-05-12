@@ -1,5 +1,6 @@
 import React from 'react';
 import { LogOut, Settings, User, Bell } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
 
 interface HeaderProps {
   userName?: string;
@@ -18,8 +19,11 @@ export const Header: React.FC<HeaderProps> = ({ userName = 'Usuario', onLogout }
 
       {/* Right Actions */}
       <div className="flex items-center gap-3">
+        {/* Theme Toggle */}
+        <ThemeToggle />
+
         {/* Notifications */}
-        <button className="p-2 hover:bg-gris-100 rounded-lg transition-colors relative">
+        <button className="p-2 hover:bg-gris-100 dark:hover:bg-gris-800 rounded-lg transition-colors relative">
           <Bell size={20} className="text-gris-600" />
           <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
         </button>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../supabaseClient';
+import { ThemeProvider } from './contexts/ThemeContext';
 import { MainLayout } from './layouts/MainLayout';
 import { Header } from './components/Header';
 import { Sidebar, SidebarMenuItem } from './components/Sidebar';
@@ -18,8 +19,9 @@ import {
 import { ProductionView } from './pages/ProductionView';
 import { LogisticsView } from './pages/LogisticsView';
 import { QualityView } from './pages/QualityView';
+import { AnalyticsView } from './pages/AnalyticsView';
 
-const App: React.FC = () => {
+const AppContent: React.FC = () => {
   const [activeView, setActiveView] = useState('dashboard');
   const [userName, setUserName] = useState('Usuario');
 
@@ -89,6 +91,8 @@ const App: React.FC = () => {
         return <LogisticsView />;
       case 'quality':
         return <QualityView />;
+      case 'analytics':
+        return <AnalyticsView />;
       case 'dashboard':
       default:
         return <DashboardContent />;
@@ -119,8 +123,8 @@ const DashboardContent: React.FC = () => {
     <div className="space-y-6">
       {/* Welcome Section */}
       <div>
-        <h2 className="text-3xl font-bold text-gris-900">Bienvenido a CACAO SAN JOSE</h2>
-        <p className="text-gris-600 mt-1">Sistema de Gestión Empresarial para Exportadores de Cacao Fino de Aroma</p>
+        <h2 className="text-3xl font-bold text-gris-900 dark:text-white">Bienvenido a CACAO SAN JOSE</h2>
+        <p className="text-gris-600 dark:text-gris-400 mt-1">Sistema de Gestión Empresarial para Exportadores de Cacao Fino de Aroma</p>
       </div>
 
       {/* Key Metrics */}
@@ -161,7 +165,7 @@ const DashboardContent: React.FC = () => {
         {/* Production by Module */}
         <Card hover>
           <CardContent>
-            <h3 className="text-lg font-semibold text-gris-900 mb-4">Producción por Módulo</h3>
+            <h3 className="text-lg font-semibold text-gris-900 dark:text-white mb-4">Producción por Módulo</h3>
             <div className="space-y-3">
               {[
                 { module: 'Mezcla Premium', percentage: 40 },
@@ -171,10 +175,10 @@ const DashboardContent: React.FC = () => {
               ].map((item, idx) => (
                 <div key={idx}>
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium text-gris-700">{item.module}</span>
-                    <span className="text-sm font-semibold text-gris-900">{item.percentage}%</span>
+                    <span className="text-sm font-medium text-gris-700 dark:text-gris-300">{item.module}</span>
+                    <span className="text-sm font-semibold text-gris-900 dark:text-white">{item.percentage}%</span>
                   </div>
-                  <div className="w-full bg-gris-200 rounded-full h-2">
+                  <div className="w-full bg-gris-200 dark:bg-gris-700 rounded-full h-2">
                     <div
                       className="h-2 rounded-full bg-cacao-600"
                       style={{ width: `${item.percentage}%` }}
@@ -189,7 +193,7 @@ const DashboardContent: React.FC = () => {
         {/* Quality Indicators */}
         <Card hover>
           <CardContent>
-            <h3 className="text-lg font-semibold text-gris-900 mb-4">Indicadores de Calidad</h3>
+            <h3 className="text-lg font-semibold text-gris-900 dark:text-white mb-4">Indicadores de Calidad</h3>
             <div className="space-y-3">
               {[
                 { metric: 'Humedad', value: '6.5%', status: '✓' },
@@ -197,10 +201,10 @@ const DashboardContent: React.FC = () => {
                 { metric: 'Acidez', value: '1.2%', status: '⚠' },
                 { metric: 'Aroma', value: '9/10', status: '✓' },
               ].map((item, idx) => (
-                <div key={idx} className="flex justify-between items-center p-3 bg-gris-50 rounded-lg">
-                  <span className="text-sm font-medium text-gris-700">{item.metric}</span>
+                <div key={idx} className="flex justify-between items-center p-3 bg-gris-50 dark:bg-gris-800 rounded-lg">
+                  <span className="text-sm font-medium text-gris-700 dark:text-gris-300">{item.metric}</span>
                   <div className="flex items-center gap-3">
-                    <span className="font-semibold text-gris-900">{item.value}</span>
+                    <span className="font-semibold text-gris-900 dark:text-white">{item.value}</span>
                     <span className={item.status === '✓' ? 'text-green-600 text-lg' : 'text-yellow-600 text-lg'}>
                       {item.status}
                     </span>
@@ -215,18 +219,18 @@ const DashboardContent: React.FC = () => {
       {/* Recent Activity */}
       <Card hover>
         <CardContent>
-          <h3 className="text-lg font-semibold text-gris-900 mb-4">Actividad Reciente</h3>
+          <h3 className="text-lg font-semibold text-gris-900 dark:text-white mb-4">Actividad Reciente</h3>
           <div className="space-y-2">
             {[
               { action: 'Orden de producción PO001 completada', time: 'Hace 2 horas', icon: '✓' },
               { action: 'Envío SHP002 entregado en Valencia', time: 'Hace 4 horas', icon: '🚚' },
               { action: '3 nuevas muestras analizadas', time: 'Hace 1 día', icon: '🔬' },
             ].map((item, idx) => (
-              <div key={idx} className="flex items-start gap-3 pb-2 border-b border-gris-100 last:border-0">
+              <div key={idx} className="flex items-start gap-3 pb-2 border-b border-gris-100 dark:border-gris-700 last:border-0">
                 <span className="text-xl mt-1">{item.icon}</span>
                 <div>
-                  <p className="text-sm font-medium text-gris-900">{item.action}</p>
-                  <p className="text-xs text-gris-500">{item.time}</p>
+                  <p className="text-sm font-medium text-gris-900 dark:text-white">{item.action}</p>
+                  <p className="text-xs text-gris-500 dark:text-gris-400">{item.time}</p>
                 </div>
               </div>
             ))}
@@ -234,6 +238,14 @@ const DashboardContent: React.FC = () => {
         </CardContent>
       </Card>
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 };
 
