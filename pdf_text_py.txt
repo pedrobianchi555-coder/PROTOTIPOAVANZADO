@@ -1,0 +1,1578 @@
+Supported OS
+Installation
+Linux
+Macos
+Windows
+Configurations
+Usage
+Activate CLE
+Service commands
+Start
+Stop
+Logs
+Realtime
+Logs save paths
+Flush logs
+Status
+More
+HTTP APIs
+Project Info
+Map 
+Model 
+Model Base64
+Algorithms
+List all beacons
+List all locators
+Retrieve a beacon
+Retrieve a locator
+Send beacon event
+Custom Userdata Cache
+Remove outdated beacons
+UDP Subscription
+Subscribe
+Unsubscribe
+Message
+SensorData
+LocatorData
+Beacon event
+Debug
+Debug logs
+Buffers
+Records
+Startup Script Generator (Unix-like OS)
+Init systems supported
+Generating a startup script
+Example:
+Saving current process list
+Disabling startup system
+FAQ
+GLIBCXX_3.4.20 not found
+Supported OS  
+Linux x64
+MacOS x64
+Windows x64
+Installation  
+Linux  
+Excute setup script cle-xxx.linux.bin
+Start a new terminal or run the following command
+chmod +x ./cle-xxx.linux.bin
+./cle-xxx.linux.bin
+Uninstall
+Macos  
+Excute setup script cle-xxx.macos.bin
+Start a new terminal or run the following command
+Uninstall
+Windows  
+Dependencies
+Microsoft Visual C++ Redistributable for Visual Studio 2019
+source ~/.bash_profile # for Bash
+# or maybe `source ~/.bashrc`
+ 
+# source ~/.zshrc # for Zsh
+cle uninstall
+chmod +x ./cle-xxx.macos.bin
+./cle-xxx.macos.bin
+source ~/.bash_profile # for Bash
+# or maybe `source ~/.bashrc`
+ 
+# source ~/.zshrc # for Zsh
+cle uninstall
+Run cle-xxx.win64.exe
+Configurations  
+Copy the following template to a file named .cle.json5 in your home directory.
+Path for Unix-like OS: ~/.cle.json5
+Path for Windows:  %userprofile%\.cle.json5
+{
+  // Logs directory.
+  // $HOME redirects to the current user's home directory.
+  // $TMP redirects to the operating system's default directory for 
+temporary files
+  LOGS_PATH: '$TMP/cle/logs',
+ 
+  // When a file size becomes higher than this value it will rotate it 
+(its possible that 
+  // the worker check the file after it actually pass the limit) . You 
+can specify the
+  // unit at then end: 10G, 10M, 10K
+  LOG_MAX_SIZE: '1G',
+ 
+  // Enable compression via gzip for all rotated logs
+  LOG_COMPRESS: true,
+ 
+  // This cron is used to a force rotate when executed. We are using 
+node-schedule to
+  // schedule cron, so all valid cron for node-schedule is valid cron 
+for this option. 
+  LOG_ROTATE_INTERVAL: '0 0 * * *',
+Usage  
+Note: Under Windows, you must run the command as an administrator.
+ 
+  // Duration per file for saving buffers. (ms)
+  BUFFERS_DURATION_PER_FILE: 600000,
+ 
+  // Duration per file for saving records. (ms)
+  RECORDS_DURATION_PER_FILE: 600000,
+ 
+  // Network Interface
+  // eg. 'eth0', 'wlan'
+  NETWORK_INTERFACES: ['eth0'],
+ 
+  // HTTP API Port
+  HTTP_API_PORT: 44444,
+ 
+  // UDP API Port
+  UDP_API_PORT: 55555,
+ 
+  // Beacon Lifetime
+  BEACON_LIFETIME: 21600000,
+ 
+  // Max number of UDP Subscribers
+  MAX_NUMBER_OF_UDP_SUBSCRIBERS: 1,
+}
+Activate CLE  
+Eg.
+Service commands  
+Start  
+Eg.
+Stop  
+Logs  
+Realtime  
+Logs save paths  
+Logs path can be modified by editing config.json5.
+cle activate path/to/license
+cle activate ~/Downloads/cle.license
+cle service start [path/to/cpaFile] [flags]
+cle service start ~/Document/demo.cpa
+cle service stop
+cle service logs
+Code Description Body
+200 OK JSON Result
+Flush logs  
+Status  
+More  
+HTTP APIs  
+Project Info  
+GET http://localhost:44444/info
+HTTP Status
+  // Logs directory.
+  // $HOME redirects to the current user's home directory.
+  // $TMP redirects to the operating system's default directory for 
+temporary files
+  LOGS_PATH: '$TMP/cle/logs',
+cle service flush
+cle service status
+cle help
+Result Structure
+Example. GET http://localhost:44444/info
+{
+  id: string; // Project id
+  name: string; // Project name
+  isPusher: boolean; // Use pusher
+  managerApiUrl: string; // RTLS Server URL
+  managerKey: string; // RTLS Server key
+  managerSecret: string; // RTLS Server secret
+  category: null | string; // Project category
+  version: string; // CPA version
+  maps: string[]; // Maps
+  algorithms: string[]; // Algorithms
+}
+{
+  "id": "HAx51aCkA",
+  "name": "test",
+  "isPusher": true,
+  "managerApiUrl": "http://api-ltt.rtls.dev.corelink.vip",
+  "managerKey": "teohoSpnVt",
+  "managerSecret": "Rt7262333913",
+  "category": null,
+  "version": "0.2.0",
+  "maps": [
+    "duIKAGcQOw"
+  ],
+  "algorithms": [
+    "AOA",
+    "RSSI"
+  ]
+}
+Code Description Body
+200 OK JSON Result
+404 Not Found Error Message
+Map  
+GET http://localhost:44444/info/maps/:mapId
+HTTP Status
+Result Structure
+{
+  id: string; // map ID
+  name: string; // map name
+  areas: Array<{ // areas info
+    id: string; // area ID
+    name: string; // area name
+    points: Array<[number, number, number, number]> // area coordinates. 
+[x, y, z, open].
+    lines: Array<{ // routes info
+      id: string; // route ID
+      name: string; // route name
+      points: Array<[number, number, number]> // route coordinates [x, 
+y, z]
+      connections: string[]; // connections
+    }>;
+    connections: string[]; // connections
+    useRoutes: boolean; // use routes
+  }>;
+  gateways: Array<AOAGateway | RSSIGateway>; // gateways info
+  width: number; // map width in meters
+Example. GET http://localhost:44444/info/maps/duIKAGcQOw
+  height: number; // map height in meters
+  useGps: boolean; // use GPS
+  gpsOriginLat?: number; // GPS latitude
+  gpsOriginLon?: number; // GPS longitude
+  gpsOffsetDegrees?: number; // offset degree
+  gpsOriginMap?: [number, number]; // GPS coordinate in map
+  originPixelX: number; // origin x in picture
+  originPixelY: number; // origin y in picture
+  widthInPixels: number; // map width in pixels
+  heightInPixels: number; // map height in pixels
+  metersPerPixel: number; // meters per pixel
+  model: { // model
+    type: 'image' | 'collada' | 'zip'; // type
+    size: string; // file size
+    extra: { // Extras. eg. textures.
+      path: string; // path
+      size: string; // file size
+    };
+  };
+}
+{
+  "id": "duIKAGcQOw",
+  "name": "test1",
+  "areas": [
+    {
+      "id": "adNGXd8mv",
+      "name": "܄لې",
+      points": [
+        [
+          0.07,
+          5.444,
+          0,
+          0
+        ],
+        [
+          10.719,
+          5.394,
+          0,
+          0
+        ],
+        [
+          10.619,
+          2.844,
+          0,
+          0
+        ],
+        [
+          -0.13,
+          2.694,
+          0,
+          0
+        ],
+        [
+          -0.08,
+          5.444,
+          0,
+          0
+        ],
+        [
+          -0.03,
+          5.544,
+          0,
+          0
+        ],
+        [
+          0.07,
+          5.444,
+          0,
+          0
+        ]
+      ],
+      "lines": [
+        {
+          "id": "nKO7Vmvol",
+          "name": "᪠ஆ1",
+          "points": [
+            [
+              3.798,
+              5.382,
+              0
+            ],
+            [
+              6.954,
+              5.399,
+              0
+            ]
+          ],
+          "connections": []
+        },
+        {
+          "id": "XTLrEK1S8e",
+          "name": "᪠ஆ2",
+          "points": [
+            [
+              3.664,
+              3.579,
+              0
+            ],
+            [
+              6.937,
+              3.445,
+              0
+            ]
+          ],
+          "connections": []
+        },
+        {
+          "id": "nuzYuAE9WO",
+          "name": "᪠ஆ3",
+          "points": [
+            [
+              0.526,
+              5.365,
+              0
+            ],
+            [
+              0.843,
+              3.679,
+              0
+            ]
+          ],
+          "connections": []
+        }
+      ],
+      "connections": [],
+      "useRoutes": true
+    },
+    {
+      "id": "3FpvM2tru",
+      "name": "܄",
+      points": [
+        [
+          2.103,
+          1.618,
+          0,
+          0
+        ],
+        [
+          4.998,
+          1.562,
+          0,
+          0
+        ],
+        [
+          5.053,
+          0.209,
+          0,
+          0
+        ],
+        [
+          3.3,
+          0.259,
+          0,
+          0
+        ],
+        [
+          3.305,
+          0.013,
+          0,
+          0
+        ],
+        [
+          0.026,
+          0.013,
+          0,
+          0
+        ],
+        [
+          0.03,
+          1.548,
+          0,
+          0
+        ],
+        [
+          2.103,
+          1.618,
+          0,
+          0
+        ]
+      ],
+      "lines": [],
+      "connections": [],
+      "useRoutes": true
+    }
+  ],
+  "gateways": [
+    {
+      "id": "AaHJLpFxiz",
+      "name": "ݦ",
+      coordinate": [
+        6.826,
+        3.976,
+        2
+      ],
+      "type": "AOA",
+      "product": "CL-GA10-P2",
+      "active": true,
+      "mac": "3c:fa:d3:b0:38:09",
+      "mqtt": null,
+      "zone": "adNGXd8mv",
+      "channel": null,
+      "elevation": 0,
+      "azimuth": 0,
+      "rotation": 0,
+      "errorDegree": 0,
+      "mode": 1,
+      "A": -63,
+      "n": 2,
+      "checked": true,
+      "markings": [
+        {
+          "id": "sUrioNJhA",
+          "name": "ຽဳ1",
+          "points": [
+            [
+              6.826,
+              3.976,
+              2
+            ],
+            [
+              10.627,
+              3.976,
+              0.002
+            ]
+          ],
+          "angle": "YAXIS",
+          "distance": 3.8,
+          "connections": []
+        },
+        {
+          "id": "xNXfWLvsv",
+          "name": "ຽဳ2",
+          "points": [
+            [
+              6.826,
+              3.976,
+              2
+            ],
+            [
+              6.826,
+              0.006,
+              0.002
+            ]
+          ],
+          "angle": "XAXIS",
+          "distance": 3.97,
+          "connections": []
+        }
+      ]
+    },
+    {
+      "id": "WYqweli_FA",
+      "name": "ૢ",
+      "coordinate": [
+        2.538,
+        3.957,
+        2
+      ],
+      "type": "AOA",
+      "product": "CL-GA10-P2",
+      "active": true,
+      "mac": "18:04:ed:7a:c5:ff",
+      "mqtt": null,
+      "zone": "adNGXd8mv",
+      "channel": null,
+      "elevation": 0,
+      "azimuth": 0,
+      "rotation": 0,
+      "errorDegree": 0,
+      "mode": 1,
+      "A": -63,
+      "n": 2,
+      "checked": true,
+      "markings": [
+        {
+          "id": "Or0b8Axzc",
+          "name": "ຽဳ3",
+          "points": [
+            [
+              2.538,
+              3.957,
+              2
+            ],
+            [
+              -0.008,
+              3.957,
+              0.002
+            ]
+          ],
+          "angle": "YAXIS",
+          "distance": 2.55,
+          "connections": []
+        },
+        {
+          "id": "8Gk6w1sNb",
+          "name": "ຽဳ4",
+          "points": [
+            [
+              2.538,
+              3.957,
+              2
+            ],
+            [
+              2.538,
+              -0.012,
+              0.002
+            ]
+          ],
+          "angle": "XAXIS",
+          "distance": 3.97,
+          "connections": []
+        }
+      ]
+    },
+    {
+      "id": "GJ-wmiScF",
+      "name": "r",
+      "coordinate": [
+        1.864,
+        0.737,
+        3
+      ],
+      "type": "RSSI",
+      "product": "CL-GB20-P 2.0",
+      "active": true,
+      "mac": "3c:fa:d3:b0:07:f9",
+      "mqtt": null,
+      "zone": "3FpvM2tru",
+      "channel": null,
+      "elevation": 0,
+      "azimuth": 0,
+      "rotation": 0,
+      "errorDegree": 0,
+      "mode": 1,
+      "A": -63,
+      "n": 2,
+      "checked": true,
+      "markings": [
+        {
+          "id": "dSMqzjZu1",
+          "name": "ຽဳ6",
+          "points": [
+            [
+              1.864,
+              0.737,
+              3
+            ],
+            [
+              1.864,
+              1.692,
+              0.002
+            ]
+          ],
+          "angle": "XAXIS",
+          "distance": 0.95,
+          "connections": []
+        },
+        {
+          "id": "vxm19Hn5_",
+          "name": "ຽဳ7",
+          "points": [
+            [
+              1.864,
+              0.737,
+              3
+            ],
+            [
+              -0.083,
+              0.737,
+              0.002
+            ]
+          ],
+          "angle": "YAXIS",
+          "distance": 1.95,
+          "connections": []
+        }
+      ]
+    }
+  ],
+  "routes": {
+    "coordinates": [
+      [
+        0.526,
+        5.365,
+        0
+      ],
+      [
+        3.798,
+        5.382,
+        0
+      ],
+      [
+        6.954,
+        5.399,
+        0
+      ],
+      [
+        6.937,
+        3.445,
+        0
+      ],
+      [
+        3.664,
+        3.579,
+        0
+      ],
+      [
+        0.843,
+        3.679,
+        0
+      ]
+    ],
+    "connections": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        0,
+        5
+      ]
+    ]
+  },
+Code Description Body
+200 OK Binary
+404 Not Found Error Message
+Model  
+GET http://localhost:44444/info/maps/:mapId/model
+HTTP Status
+  "width": 50,
+  "height": 50,
+  "useGps": true,
+  "gpsOriginLat": 50,
+  "gpsOriginLon": 50,
+  "gpsOffsetDegrees": 0,
+  "gpsOriginMap": [
+    0,
+    0
+  ],
+  "originPixelX": -412,
+  "originPixelY": 512,
+  "widthInPixels": 1024,
+  "heightInPixels": 1024,
+  "metersPerPixel": 0.048828125,
+  "model": {
+    "type": "image",
+    "base64": "..."
+  },
+}
+Code Description Body
+200 OK JSON Result
+404 Not Found Error Message
+Code Description Body
+200 OK JSON Result
+Model Base64  
+GET http://localhost:44444/info/maps/:mapId/model/base64
+HTTP Status
+Result Structure
+Algorithms  
+GET http://localhost:44444/info/algorithms
+HTTP Status
+Result Structure
+Example. GET http://localhost:44444/info/algorithms
+{
+  base64: string;
+}
+[AOA, RSSI]
+[
+  {
+    "id": "hUwk72tHWa",
+    "active": true,
+    "type": "AOA",
+    "gatewayHeight": 2.8,
+    "height": 0.75,
+    "smoothLevel": 4,
+    "filterLen": 5,
+    "filterParam": 0.1,
+    "personalized": false,
+    "beacons": []
+  },
+  {
+    "id": "4GYNrMnz6c",
+    "active": true,
+    "type": "RSSI",
+    "mode": 1,
+    "modeSwitch": 1,
+    "floorSwitch": 1,
+    "regionSwitch": 1,
+    "floorSwitchRssi": 0,
+    "regionSwitchRssi": 0,
+    "ewma1": 0.75,
+    "ewma2": 0.75,
+    "Q": 0.1,
+    "lastPoint": 5,
+    "gatewayNum": 6,
+    "pvaDistance": 20,
+    "zoomRegion": 0.5,
+    "zoomTrack": 0,
+    "distanceWeight": 1,
+    "maxD": 20,
+    "rssiGradient": 10,
+    "floorMinRssi": -85,
+Name In Optional Description
+macs query YES Beacon macs
+List all beacons  
+GET http://localhost:44444/beacons
+Parameters
+HTTP Status
+    "hmmBeta": 2,
+    "hmmSigma": 0.5,
+    "staticDataSwitch": false,
+    "staticDataNum": 1000,
+    "allStaticData": false,
+    "timeLog": false,
+    "generateJson": false,
+    "file": "data/123",
+    "beacons": [
+      {
+        "id": "cxInUq_1qM",
+        "mac": "",
+        "pLog": false,
+        "coordinates": [
+          0,
+          0
+        ]
+      }
+    ]
+  }
+]
+Code Description Body
+200 OK JSON Result
+Result Structure
+{
+  [beaconMac: string]: {
+    x: number; // Position x-axis
+    y: number; // Position y-axis
+    z: number; // Position z-axis
+    rssi: number; // RSSI value
+    mapId: string; // Map ID
+    zoneId: string; // Zone ID
+    gps: null | { // WGS-84 coordinates
+      lat: number; // latitude
+      lon: number; // longitude
+    };
+    updatedAt: number; // Timestamp for last package
+    calculatedAt: number; // Timestamp after calculation
+    userData: {
+      0: {
+        channel: number; //
+        frequency: number; //
+        recv: boolean;
+        power: { // 
+          type: 'TI' | 'Nordic'; // 
+          value: number; //
+        };
+        sos: boolean; // Button pressed
+        battery: number; // Battery percentage
+        lastPressedTS: nummber; // Timestamp button pressed
+      };
+    };
+    userDataTs: {
+Example. GET http://localhost:44444/beacons?macs=806fb00c45d9,806fb00c45c
+9
+      [cmd: number]: number; // userData timestamp
+    };
+    lastGateway: string; // Gateway mac
+  }
+}
+{
+  "806fb00c45d9": {
+    "x":9.573189735412598,
+    "y":5.213486194610596,
+    "z":0.800000011920929,
+    "rssi": -60.00,
+    "mapId":"lwlx6fFgu",
+    "zoneId":"z1",
+    "gps": null,
+    "updatedAt":1571109529308,
+    "calculatedAt": 1571109529309,
+    "userData":{
+      "0":{
+        "channel":2481,
+        "frequency":50,
+        "power":{
+          "type":"TI",
+          "value":5
+        },
+        "sos":false,
+        "battery":83
+      }
+    },
+    "userDataTs": {
+      "0": 1571109529201
+    },
+    "lastGateway": "80:6f:b0:c4:13:60"
+  },
+  "806fb00c45c9":{
+    "x":6.329273700714111,
+    "y":7.880806922912598,
+    "z":0.800000011920929,
+    "rssi": -60.00,
+    "mapId":"lwlx6fFgu",
+    "zoneId":"z1",
+    "gps": null,
+    "updatedAt":1571109529215,
+    "calculatedAt": 1571109529216,
+    "userData":{
+      "0":{
+        "channel":2481,
+        "frequency":110,
+        "power":{
+          "type":"TI",
+          "value":0
+        },
+        "sos":false,
+        "battery":95
+      }
+    },
+    "userDataTs": {
+      "0": 1571109529201
+    },
+    "lastGateway": "80:6f:b0:c4:13:60"
+  }
+}
+Name In Optional Description
+macs query YES Locator macs
+Code Description Body
+200 OK JSON Result
+List all locators  
+GET http://localhost:44444/locators
+Parameters
+HTTP Status
+Result Structure
+{
+  [locatorIpAddressV4: string]: {
+    mac: string; // Locator mac
+    angles: number[6]; // Locator angles
+    updatedAt: number; // Timestamp for last package
+    online: boolean; // online
+    info?: {
+      name: string; // Locator name
+      type: string; // Locator type
+      mapId: string; // Map Id
+      zoneId: string; // Zone Id
+      channel: string; // Working channel
+      elevation: number; // Elevation for AOA algorithm
+      azimuth: number; // Azimuth for AOA algorithm
+      rotation: number; // Rotation for AOA algorithm
+      errorDegree: number; // Error Degree for AOA algorithm
+Example. GET http://localhost:44444/locators?macs=3c:fa:d3:b0:33:f8,3c:fa:d3:b0
+:33:fc
+      x: number; // Position x-axis
+      y: number; // Position y-axiy
+      z: number; // Position z-axis
+    };
+  }
+}
+{
+  "192.168.124.60": {
+    "mac": "3c:fa:d3:b0:33:f8",
+    "angles": [
+      553,
+      392,
+      -1840,
+      427,
+      -268,
+      990
+    ],
+    "updatedAt": 1582795155178,
+    "info": {
+      "x": 12,
+      "y": 2,
+      "z": 3,
+      "mapId": "63dhjtywP",
+      "elevation": 2.766,
+      "azimuth": 219.278,
+      "rotation": 325.054,
+      "errorDegree": 0.357,
+      "channel": null,
+      "name": "1",
+      "type": "AOA",
+      "zoneId": null
+    }
+  },
+  "192.168.124.64": {
+    "mac": "3c:fa:d3:b0:33:fc",
+    "angles": [
+      283,
+      28,
+      -1850,
+      351,
+      -647,
+      795
+    ],
+    "updatedAt": 1582795155180,
+    "info": {
+      "x": 1,
+      "y": 2,
+      "z": 3,
+      "mapId": "63dhjtywP",
+      "elevation": 174.084,
+      "azimuth": 45.46,
+      "rotation": 76.109,
+      "errorDegree": 37.342,
+      "channel": null,
+      "name": "2",
+      "type": "AOA",
+      "zoneId": null
+    }
+  }
+}
+Name In Optional Description
+mac path NO Beacon mac
+Code Description Body
+200 OK JSON Result
+404 Not Found Error Message
+Retrieve a beacon  
+GET http://localhost:44444/beacons/:mac
+Parameters
+HTTP Status
+Result Structure
+{
+  mac: string; // Beacon mac
+  x: number; // Position x-axis
+  y: number; // Position y-axis
+  z: number; // Position z-axis
+  rssi: number; // RSSI value
+  mapId: string; // Map ID
+  zoneId: string; // Zone ID
+  gps: null | { // WGS-84 coordinates
+    lat: number; // latitude
+    lon: number; // longitude
+  };
+  updatedAt: number; // Timestamp for last package
+  calculatedAt: number; // Timestamp after calculation
+Example. GET http://localhost:44444/beacons/806fb00c45c9
+  userData: {
+    0: {
+      channel: number; //
+      frequency: number; //
+      power: { // 
+        type: 'TI' | 'Nordic'; // 
+        value: number; //
+      };
+      sos: boolean; // Button pressed
+      battery: number; // Battery percentage
+    };
+  };
+  userDataTs: {
+    [cmd: number]: number; // userData timestamp
+  };
+  lastGateway: string; // Gateway mac
+}
+{
+  "mac": "806fb00c45c9",
+  "x": 6.963463306427002,
+  "y": 6.864238739013672,
+  "z": 0.800000011920929,
+  "rssi": -60.00,
+  "mapId": "lwlx6fFgu",
+  "zoneId": "z1",
+  "gps": null,
+  "updatedAt": 1571120302882,
+  "calculatedAt": 1571120302883,
+  "userData": {
+    "0": {
+      "channel": 2481,
+Name In Optional Description
+mac path NO Locator mac
+Example. GET http://localhost:44444/beacons/mac_not_existed
+Retrieve a locator  
+GET http://localhost:44444/locators/:mac
+Parameters
+HTTP Status
+      "frequency": 110,
+      "power":{
+        "type": "TI",
+        "value": 0
+      },
+      "sos": false,
+      "battery": 95
+    }
+  },
+  "userDataTs": {
+    "0": 1571109529201
+  },
+  "lastGateway": "80:6f:b0:c4:13:60"
+}
+Beacon not found
+Code Description Body
+200 OK JSON Result
+404 Not Found Error Message
+Result Structure
+Example. GET http://localhost:44444/locators/3c:fa:d3:b0:33:f8
+{
+  ip: string; // Locator ip address v4
+  mac: string; // Locator mac
+  angles: number[6]; // Locator angles
+  updatedAt: number; // Timestamp for last package
+  online: boolean; // online
+  info?: {
+    name: string; // Locator name
+    type: string; // Locator type
+    mapId: string; // Map Id
+    zoneId: string; // Zone Id
+    channel: string; // Working channel
+    elevation: number; // Elevation for AOA algorithm
+    azimuth: number; // Azimuth for AOA algorithm
+    rotation: number; // Rotation for AOA algorithm
+    errorDegree: number; // Error Degree for AOA algorithm
+    x: number; // Position x-axis
+    y: number; // Position y-axiy
+    z: number; // Position z-axis
+  };
+}
+{
+  "ip": "192.168.124.60",
+Example. GET http://localhost:44444/locators/mac_not_existed
+  "mac": "3c:fa:d3:b0:33:f8",
+  "angles": [
+    553,
+    392,
+    -1840,
+    427,
+    -268,
+    990
+  ],
+  "updatedAt": 1582795155178,
+  "info": {
+    "x": 12,
+    "y": 2,
+    "z": 3,
+    "mapId": "63dhjtywP",
+    "elevation": 2.766,
+    "azimuth": 219.278,
+    "rotation": 325.054,
+    "errorDegree": 0.357,
+    "channel": null,
+    "name": "1",
+    "type": "AOA",
+    "zoneId": null
+  }
+}
+Locator not found
+Name In Optional Description
+mac path NO Beacon mac
+json body NO JSON Body
+Code Description Body
+200 OK Empty
+400 Failed Empty
+404 Not Found Error Message
+Send beacon event  
+POST http://localhost:44444/beacons/:mac/event
+Parameters
+HTTP Status
+JSON Body Structure
+Example. POST http://localhost:44444/beacons/ada29b164768/event
+{
+  value: number; // Event value
+  duration?: number; // Event duration (s)
+  ext?: number[3]; // Extension
+}
+Name In Optional Description
+mac path NO Beacon mac
+cmd path NO Custom command
+Code Description Body
+200 OK JSON Result
+Custom Userdata Cache  
+GET http://localhost:44444/beacons/:mac/custom/:cmd
+Parameters
+HTTP Status
+JSON Body Structure
+Example. GET http://localhost:44444/beacons/3cfad3b09998/custom/9
+{
+  "type":"beaconEvent",
+  "value":1,
+  "duration":20
+}
+Array<[cmd, value1, value2, value3, timestamp]>
+[[9,17,34,21,1584686032298],[9,17,34,24,1584686032335],
+[9,17,34,27,1584686032377],[9,17,34,30,1584686032426],
+[9,17,34,33,1584686032474],[9,17,34,39,1584686032554],
+[9,17,34,42,1584686032602],[9,17,34,45,1584686032663],
+[9,17,34,54,1584686032782],[9,17,34,57,1584686032828],
+[9,17,34,60,1584686032860],[9,17,34,66,1584686032958],
+[9,17,34,69,1584686033006],[9,17,34,78,1584686033140],
+[9,17,34,81,1584686033182],[9,17,34,87,1584686033264],
+[9,17,34,93,1584686033361],[9,17,34,96,1584686033401],
+[9,17,34,2,1584686033489],[9,17,34,11,1584686033620],
+[9,17,34,14,1584686033667],[9,17,34,17,1584686033714],
+[9,17,34,20,1584686033752],[9,17,34,23,1584686033803],
+[9,17,34,29,1584686033892],[9,17,34,32,1584686033931],
+[9,17,34,35,1584686033981],[9,17,34,38,1584686034021],
+[9,17,34,41,1584686034072],[9,17,34,44,1584686034111],
+[9,17,34,47,1584686034151],[9,17,34,50,1584686034201],
+[9,17,34,56,1584686034286],[9,17,34,59,1584686034332],
+[9,17,34,62,1584686034382],[9,17,34,68,1584686034465],
+[9,17,34,74,1584686034556],[9,17,34,80,1584686034641],
+[9,17,34,86,1584686034738],[9,17,34,89,1584686034780],
+[9,17,34,92,1584686034812],[9,17,34,95,1584686034866],
+[9,17,34,98,1584686034909],[9,17,34,1,1584686034957],
+[9,17,34,7,1584686035041],[9,17,34,10,1584686035085],
+[9,17,34,13,1584686035141],[9,17,34,22,1584686035264],
+[9,17,34,25,1584686035311],[9,17,34,28,1584686035345],
+[9,17,34,37,1584686035491],[9,17,34,40,1584686035533],
+[9,17,34,43,1584686035572],[9,17,34,46,1584686035620],
+[9,17,34,55,1584686035760],[9,17,34,61,1584686035845],
+[9,17,34,64,1584686035880],[9,17,34,70,1584686035976],
+[9,17,34,76,1584686036059],[9,17,34,79,1584686036111],
+[9,17,34,82,1584686036160],[9,17,34,91,1584686036286],
+[9,17,34,0,1584686036412],[9,17,34,12,1584686036600],
+[9,17,34,18,1584686036687],[9,17,34,21,1584686036738],
+[9,17,34,24,1584686036768],[9,17,34,27,1584686036828],
+[9,17,34,33,1584686036916],[9,17,34,39,1584686036995],
+[9,17,34,42,1584686037045],[9,17,34,45,1584686037092],
+[9,17,34,48,1584686037132],[9,17,34,54,1584686037221],
+[9,17,34,57,1584686037271],[9,17,34,60,1584686037301],
+[9,17,34,66,1584686037402],[9,17,34,69,1584686037450],
+[9,17,34,72,1584686037480],[9,17,34,75,1584686037528],
+[9,17,34,81,1584686037624],[9,17,34,84,1584686037661],
+[9,17,34,87,1584686037711],[9,17,34,90,1584686037760],
+[9,17,34,93,1584686037801],[9,17,34,96,1584686037838],
+[9,17,34,99,1584686037882],[9,17,34,2,1584686037939],
+[9,17,34,8,1584686038013],[9,17,34,11,1584686038067],
+[9,17,34,14,1584686038113],[9,17,34,17,1584686038174],
+[9,17,34,20,1584686038189],[9,17,34,23,1584686038239],
+[9,17,34,26,1584686038302],[9,17,34,32,1584686038404],
+[9,17,34,35,1584686038417],[9,17,34,38,1584686038465],
+[9,17,34,44,1584686038544],[9,17,34,47,1584686038595],
+[9,17,34,50,1584686038645],[9,17,34,53,1584686038689],
+[9,17,34,59,1584686038772],[9,17,34,62,1584686038818],
+[9,17,34,65,1584686038866],[9,17,34,71,1584686038947],
+[9,17,34,74,1584686039027],[9,17,34,80,1584686039083],
+[9,17,34,83,1584686039128],[9,17,34,86,1584686039176],
+[9,17,34,95,1584686039302],[9,17,34,1,1584686039417],
+[9,17,34,4,1584686039450],[9,17,34,13,1584686039580],
+[9,17,34,16,1584686039608],[9,17,34,19,1584686039656],
+[9,17,34,22,1584686039711],[9,17,34,25,1584686039761],
+[9,17,34,28,1584686039787],[9,17,34,34,1584686039882],
+[9,17,34,37,1584686039931],[9,17,34,43,1584686040012],
+[9,17,34,46,1584686040060],[9,17,34,49,1584686040115],
+[9,17,34,55,1584686040201],[9,17,34,58,1584686040240],
+[9,17,34,61,1584686040288],[9,17,34,64,1584686040323],
+[9,17,34,70,1584686040418],[9,17,34,73,1584686040518],
+[9,17,34,79,1584686040558],[9,17,34,88,1584686040678],
+[9,17,34,91,1584686040728],[9,17,34,94,1584686040780],
+[9,17,34,97,1584686040838],[9,17,34,0,1584686040877],
+[9,17,34,3,1584686040910],[9,17,34,6,1584686040959],
+[9,17,34,9,1584686041004],[9,17,34,15,1584686041083],
+[9,17,34,18,1584686041133],[9,17,34,24,1584686041212],
+[9,17,34,27,1584686041281],[9,17,34,30,1584686041317],
+[9,17,34,33,1584686041359],[9,17,34,36,1584686041404],
+[9,17,34,39,1584686041440],[9,17,34,42,1584686041488],
+[9,17,34,45,1584686041534],[9,17,34,48,1584686041570],
+Code Description Body
+200 OK JSON Result
+Remove outdated beacons  
+GET http://localhost:44444/flush-beacons
+HTTP Status
+Result Structure
+Example. GET http://localhost:44444/flush-beacons
+[9,17,34,51,1584686041616],[9,17,34,54,1584686041671],
+[9,17,34,57,1584686041714],[9,17,34,60,1584686041745],
+[9,17,34,63,1584686041798],[9,17,34,69,1584686041890],
+[9,17,34,72,1584686041935],[9,17,34,75,1584686041972],
+[9,17,34,78,1584686042035],[9,17,34,81,1584686042068],
+[9,17,34,84,1584686042109],[9,17,34,87,1584686042150],
+[9,17,34,90,1584686042218],[9,17,34,93,1584686042249],
+[9,17,34,96,1584686042282]]
+{
+  count: number; // number of beacons removed
+}
+{
+  "count": 10
+}
+UDP Subscription  
+Subscribe  
+nodejs code example
+Unsubscribe  
+nodejs code example
+Message  
+Structure
+import { createSocket } from 'dgram';
+ 
+const client = createSocket('udp4');
+client.send('subscribe', 55555, '127.0.0.1');
+client.on('message', msg => {
+  try {
+    const message = JSON.parse(msg.toString());
+    console.log(message);
+  } catch (e) {
+    console.error(e);
+  }
+});
+import { createSocket } from 'dgram';
+ 
+const client = createSocket('udp4');
+client.send('unsubscribe', 55555, '127.0.0.1');
+Example 1: Sensors
+{
+  type: 'sensors' | 'locators';
+  data: SensorData | LocatorData;
+}
+{
+  "type": "sensors",
+  "data": {
+    "806fb00c45d9": {
+      "x":9.573189735412598,
+      "y":5.213486194610596,
+      "z":0.800000011920929,
+      "mapId":"lwlx6fFgu",
+      "zoneId":"z1",
+      "gps": null,
+      "updatedAt":1571109529308,
+      "calculatedAt": 1571109529309,
+      "userData":{
+        "0":{
+          "channel":2481,
+          "frequency":50,
+          "power":{
+            "type":"TI",
+            "value":5
+          },
+          "sos":false,
+          "battery":83
+        }
+      },
+      "userDataTs": {
+        "0": 1571109529201
+      },
+Example 2: Locators
+      "lastGateway": "80:6f:b0:c4:13:60"
+    },
+    "806fb00c45c9":{
+      "x":6.329273700714111,
+      "y":7.880806922912598,
+      "z":0.800000011920929,
+      "mapId":"lwlx6fFgu",
+      "zoneId":"z1",
+      "gps": null,
+      "updatedAt":1571109529215,
+      "calculatedAt": 1571109529216,
+      "userData":{
+        "0":{
+          "channel":2481,
+          "frequency":110,
+          "power":{
+            "type":"TI",
+            "value":0
+          },
+          "sos":false,
+          "battery":95
+        }
+      },
+      "userDataTs": {
+        "0": 1571109529201
+      },
+      "lastGateway": "80:6f:b0:c4:13:60"
+    }
+  }
+}
+{
+  "type": "locators",
+  "data": {
+    "192.168.124.60": {
+      "mac": "3c:fa:d3:b0:33:f8",
+      "angles": [
+        553,
+        392,
+        -1840,
+        427,
+        -268,
+        990
+      ],
+      "updatedAt": 1582795155178,
+      "info": {
+        "x": 12,
+        "y": 2,
+        "z": 3,
+        "mapId": "63dhjtywP",
+        "elevation": 2.766,
+        "azimuth": 219.278,
+        "rotation": 325.054,
+        "errorDegree": 0.357,
+        "channel": null,
+        "name": "1",
+        "type": "AOA",
+        "zoneId": null
+      }
+    },
+    "192.168.124.64": {
+      "mac": "3c:fa:d3:b0:33:fc",
+      "angles": [
+        283,
+        28,
+        -1850,
+        351,
+        -647,
+        795
+      ],
+      "updatedAt": 1582795155180,
+      "info": {
+        "x": 1,
+        "y": 2,
+        "z": 3,
+        "mapId": "63dhjtywP",
+        "elevation": 174.084,
+        "azimuth": 45.46,
+        "rotation": 76.109,
+        "errorDegree": 37.342,
+        "channel": null,
+        "name": "2",
+        "type": "AOA",
+        "zoneId": null
+      }
+    },
+    "192.168.124.222": {
+      "mac": "3c:fa:d3:b0:33:9d",
+      "angles": [
+        113,
+        85,
+        -1907,
+        -881,
+        -1313,
+        1128
+      ],
+      "updatedAt": 1582795155182,
+      "info": {
+        "x": 3,
+        "y": 2,
+        "z": 1,
+        "mapId": "63dhjtywP",
+        "elevation": 171.515,
+        "azimuth": 267.8,
+        "rotation": 331.18,
+        "errorDegree": 9.527,
+        "channel": null,
+        "name": "3",
+        "type": "AOA",
+        "zoneId": null
+      }
+    },
+    "192.168.124.65": {
+      "mac": "3c:fa:d3:b0:33:fd",
+      "angles": [
+        -1041,
+        -150,
+        -1609,
+        -320,
+        -1334,
+        727
+      ],
+      "updatedAt": 1582795155183,
+      "info": {
+        "x": 1,
+        "y": 1,
+        "z": 1,
+        "mapId": "63dhjtywP",
+        "elevation": 169.485,
+        "azimuth": 348.431,
+        "rotation": 330.977,
+        "errorDegree": 3.361,
+        "channel": null,
+        "name": "4",
+        "type": "AOA",
+        "zoneId": null
+      }
+    },
+    "192.168.124.231": {
+      "mac": "3c:fa:d3:b0:33:a6",
+      "angles": [
+        517,
+        -805,
+        -1742,
+        -144,
+        -260,
+        607
+      ],
+      "updatedAt": 1582795155185,
+      "info": {
+        "x": 3,
+        "y": 3,
+        "z": 1,
+        "mapId": "63dhjtywP",
+        "elevation": 177.791,
+        "azimuth": 306.003,
+        "rotation": 329.3,
+        "errorDegree": 9.234,
+        "channel": null,
+        "name": "5",
+        "type": "AOA",
+        "zoneId": null
+      }
+    },
+    "192.168.124.30": {
+      "mac": "3c:fa:d3:b0:33:da",
+      "angles": [
+        169,
+        52,
+        -1945,
+        88,
+        -69,
+        547
+      ],
+      "updatedAt": 1582795155187,
+      "info": {
+SensorData  
+        "x": 2,
+        "y": 1,
+        "z": 1,
+        "mapId": "63dhjtywP",
+        "elevation": 175.796,
+        "azimuth": 302.003,
+        "rotation": 278.412,
+        "errorDegree": 0.197,
+        "channel": null,
+        "name": "6",
+        "type": "AOA",
+        "zoneId": null
+      }
+    }
+  }
+}
+{
+  [beaconMac: string]: {
+    x: number; // Position x-axis
+    y: number; // Position y-axis
+    z: number; // Position z-axis
+    mapId: string; // Map ID
+    zoneId: string; // Zone ID
+    gps: null | { // WGS-84 coordinates
+      lat: number; // latitude
+      lon: number; // longitude
+    };
+    updatedAt: number; // Timestamp for last package
+    calculatedAt: number; // Timestamp after calculation
+    userData: {
+      0: {
+        channel: number; //
+LocatorData  
+        frequency: number; //
+        recv: boolean;
+        power: { // 
+          type: 'TI' | 'Nordic'; // 
+          value: number; //
+        };
+        sos: boolean; // Button pressed
+        battery: number; // Battery percentage
+        lastPressedTS: nummber; // Timestamp button pressed
+      };
+    };
+    userDataTs: {
+      [cmd: number]: number; // userData timestamp
+    };
+    lastGateway: string; // Gateway mac
+  }
+}
+{
+  [locatorIpAddressV4: string]: {
+    mac: string; // Locator mac
+    angles: number[]; // Locator angles
+    updatedAt: number; // Timestamp for last package
+    online: boolean; // online
+    info?: {
+      name: string; // Locator name
+      type: string; // Locator type
+      mapId: string; // Map Id
+      zoneId: string; // Zone Id
+      channel: string; // Working channel
+      elevation: number; // Elevation for AOA algorithm
+      azimuth: number; // Azimuth for AOA algorithm
+      rotation: number; // Rotation for AOA algorithm
+Beacon event  
+nodejs code example
+Debug  
+Debug logs  
+Eg.
+      errorDegree: number; // Error Degree for AOA algorithm
+      x: number; // Position x-axis
+      y: number; // Position y-axiy
+      z: number; // Position z-axis
+    };
+  };
+}
+import { createSocket } from 'dgram';
+ 
+const client = createSocket('udp4');
+client.send(JSON.stringify({
+  type: 'beaconEvent',
+  value: 1,
+  duration: 5,
+  mac:'ada29b164768',
+}), 55555, '127.0.0.1');
+cle service debug on|off
+cle service debug on
+Buffers  
+Eg.
+Records  
+Eg.
+Startup Script Generator (Unix-like
+OS)
+ 
+CLE uses PM2 to generate startup scripts and configure them in order to keep your 
+process list intact across expected or unexpected machine restarts.
+cle service debug off
+cle service save buffers on|off [path/to/dir]
+cle service save buffers on
+cle service save buffers off
+cle service save records on|off [path/to/dir]
+cle service save records on
+cle service save records off
+Init systems supported  
+√systemd: Ubuntu >= 16, CentOS >= 7, Arch, Debian >= 7
+upstart: Ubuntu <= 14
+√launchd: Darwin, MacOSx
+openrc: Gentoo Linux, Arch Linux
+rcd: FreeBSD
+systemv: Centos 6, Amazon Linux
+√registry: Windows 10
+Generating a startup script  
+To get the automatically-configured startup script for your machine you need to type this 
+command:
+Do not pass sudo to this command! It will print the exact right command you will have to 
+copy/paste into your terminal
+Example:  
+You simply have to copy/paste the line PM2 gives you and the startup script will be 
+configured for your OS.
+NOTE 1 : When upgrading to newer CLE version, update the PM2 startup script! Use cle 
+pm2 unstartup first then cle pm2 startup again
+cle pm2 startup
+$ cle pm2 startup
+[PM2] Init System found: systemd
+[PM2] To setup the Startup Script, copy/paste the following command:
+sudo env PATH=$PATH:/home/yu/.corelink/cle cle pm2 startup systemd -u yu 
+--hp /home/yu
+NOTE 2: You can customize the service name via the --service-name  option
+Saving current process list  
+Important
+Once you started all the applications you want to manage, you have to save the list you 
+wanna respawn at machine reboot with:
+It will save the process list with the corresponding environments into the dump file 
+~/.corelink/cle/pm2/dump.pm2
+Disabling startup system  
+FAQ  
+GLIBCXX_3.4.20 not found  
+For low version Ubuntu
+cle pm2 save
+cle pm2 unstartup
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install libstdc++6

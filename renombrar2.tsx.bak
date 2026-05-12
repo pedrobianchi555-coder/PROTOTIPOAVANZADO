@@ -1,0 +1,258 @@
+
+import React, { useState, useEffect } from 'react';
+import { supabase } from './supabaseClient';
+import { EmptyingRecord, MachineryChecklist } from './types';
+import {
+  Factory,
+  ArrowRight,
+  CheckSquare,
+  Square,
+  AlertTriangle,
+  Save,
+  Loader2,
+  LogOut
+} from 'lucide-react';
+import { useConfirmation } from './contexts/ConfirmationContext';
+
+interface Props {
+  onCancel?: () => void;
+}
+
+const MAX_CAPACITY = 2450; // Kg per Guardiola
+
+const initialChecklist: MachineryChecklist = {
+  prelimpiadora: false,
+  densimetrica: false,
+  despedradora: false,
+  zaranda: false,
+  secadora: false
+};
+
+export const EmptyingView: React.FC<Props> = ({ onCancel }) => {
+  const { confirm } = useConfirmation();
+  const [loading, setLoading] = useState(false);
+  const [pendingOrders, setPendingOrders] = useState<any[]>([]);
+  const [activeProcesses, setActiveProcesses] = useState<EmptyingRecord[]>([]);
+
+  // Form State
+  const [selectedOrder, setSelectedOrder] = useState<any | null>(null);
+  const [selectedGuardiola, setSelectedGuardiola] = useState<number | null>(null);
+  const [checklist, setChecklist] = useState<MachineryChecklist>(initialChecklist);
+  const [operator, setOperator] = useState('');
+  const [observations, setObservations] = useState('');
+
+  // Fetch Data
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      // 1. Fetch Approved Production Orders that are not yet in "Emptying"
+      // Note: In a real app, you'd filter out orders already in emptying_process table via a join or logic
+      const { data: orders, error: orderError } = await supabase
+        .from('production_orders')
+        .select('*')
+        .eq('status', 'Registrado') // Assuming 'Registrado' is the state before Emptying
+        .order('created_at', { ascending: false });
+
+      if (orderError) throw orderError;
+
+      // 2. Fetch Active Emptying Processes to lock Guardiolas
+      const { data: processes, error: procError } = await supabase
+        .from('emptying_process')
+        .select('*')
+        .eq('status', 'En Proceso');
+
+      if (procError) throw procError;
+
+      // Filter out orders that are already in process
+      // We look at emptying_process table to see which order_ids are present
+      // Ideally we fetch all emptying process records ever to filter completely or just active ones?
+      // Let's fetch ALL emptying records to filter out ANY order that has started
+      const { data: allProcesses } = await supabase.from('emptying_process').select('production_order_id');
+
+      const startedOrderIds = (allProcesses || []).map((p: any) => p.production_order_id);
+      const availableOrders = (orders || []).filter((o: any) => !startedOrderIds.includes(o.id));
+
+      setPendingOrders(availableOrders);
+      setActiveProcesses(processes || []);
+
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  // Handlers
+  const handleOrderSelect = (order: any) => {
+    setSelectedOrder(order);
+    setSelectedGuardiola(null); // Reset selection
+    setChecklist(initialChecklist);
+  };
+
+  const handleGuardiolaSelect = (num: number) => {
+    // Check if occupied
+    if (activeProcesses.some(p => p.guardiola_number === num)) return;
+    setSelectedGuardiola(num);
+  };
+
+  const toggleCheck = (machine: keyof MachineryChecklist) => {
+    setChecklist(prev => ({ ...prev, [machine]: !prev[machine] }));
+  };
+
+  const handleSubmit = async () => {
+    if (!selectedOrder || !selectedGuardiola || !operator) {
+      alert("Complete todos los campos obligatorios (Orden, Guardiola, Operador).");
+      return;
+    }
+
+    // Validate Checklist
+    if (!Object.values(checklist).every(v => v)) {
+      const confirmed = await confirm({
+        title: 'Verificación Incompleta',
+        message: 'No ha marcado todas las máquinas como operativas. ¿Desea continuar de todos modos?',
+        type: 'warning',
+        confirmLabel: 'Continuar',
+        cancelLabel: 'Cancelar'
+      });
+      if (!confirmed) return;
+    }
+
+    setLoading(true);
+    try {
+      // Calculate total weight. 
+      // Since we don't have the recipe ingredients sum directly on the order record in this view yet,
+      // We'll fetch it or use a placeholder. In a real scenario, the backend or previous step calculates this.
+      // Let's assume a standard batch size or fetch it if possible.
+      // For now, let's use a mock value or try to fetch the recipe connected to the order.
+
+      let estimatedWeight = 0;
+      // Try to fetch recipe weight
+      if (selectedOrder.recipe_number) {
+        const { data: recipeData } = await supabase
+          .from('production_recipes')
+          .select('recipe_ingredients(*)')
+          .eq('recipe_code', selectedOrder.recipe_number)
+          .single();
+
+        if (recipeData && recipeData.recipe_ingredients) {
+          estimatedWeight = recipeData.recipe_ingredients.reduce((sum: number, i: any) => sum + (i.weight_kg || 0), 0);
+        }
+      }
+
+      if (estimatedWeight === 0) estimatedWeight = 2000; // Fallback if lookup fails
+
+      if (estimatedWeight > MAX_CAPACITY) {
+        alert(`¡Alerta! El peso estimado (${estimatedWeight.toFixed(2)}kg) excede la capacidad de la Guardiola (${MAX_CAPACITY}kg).`);
+        setLoading(false);
+        return;
+      }
+
+      const payload = {
+        production_order_id: selectedOrder.id,
+        reception_code: selectedOrder.serial_number, // Using serial as visual ref
+        guardiola_number: selectedGuardiola,
+        start_date: new Date().toISOString().split('T')[0],
+        start_time: new Date().toTimeString().slice(0, 5),
+        operator_name: operator,
+        total_weight_input: estimatedWeight,
+        machinery_check: checklist,
+        status: 'En Proceso',
+        observations: observations
+      };
+
+      const { error } = await supabase.from('emptying_process').insert([payload]);
+      if (error) throw error;
+
+      alert("Proceso de Vaciado iniciado correctamente.");
+
+      // Reset Form
+      setSelectedOrder(null);
+      setSelectedGuardiola(null);
+      setOperator('');
+      setObservations('');
+      setChecklist(initialChecklist);
+
+      // Refresh
+      fetchData();
+
+    } catch (err: any) {
+      alert("Error: " + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Render Helpers
+  const renderGuardiola = (num: number) => {
+    const process = activeProcesses.find(p => p.guardiola_number === num);
+    const isOccupied = !!process;
+    const isSelected = selectedGuardiola === num;
+
+    return (
+      <div
+        onClick={() => handleGuardiolaSelect(num)}
+        className={`
+          relative flex flex-col items-center justify-end h-64 w-40 border-2 rounded-t-full rounded-b-lg cursor-pointer transition-all
+          ${isOccupied
+            ? 'bg-amber-50 border-amber-400 cursor-not-allowed'
+            : isSelected
+              ? 'bg-indigo-50 border-indigo-600 scale-105 shadow-lg'
+              : 'bg-white border-gray-300 hover:border-indigo-300'
+          }
+        `}
+      >
+        <div className="absolute top-6 text-3xl font-bold text-gray-300 select-none">G{num}</div>
+
+        {isOccupied ? (
+          <div className="w-full h-3/4 bg-gradient-to-t from-amber-700/40 to-amber-100/20 rounded-b-lg flex flex-col items-center justify-center p-2 text-center relative overflow-hidden">
+            {/* Animation for filling effect */}
+            <div className="absolute inset-0 bg-amber-800/10 animate-pulse"></div>
+
+            <span className="relative text-xs font-bold text-amber-900 bg-amber-100/80 px-2 py-1 rounded mb-1">OCUPADA</span>
+            <span className="relative text-[10px] font-mono text-amber-900">{process.reception_code}</span>
+            <span className="relative text-sm font-bold text-amber-900 mt-1">{(process.total_weight_input || 0).toLocaleString()} kg</span>
+            <span className="relative text-[9px] text-amber-800 mt-2">{process.start_date}</span>
+          </div>
+        ) : (
+          <div className="mb-8 flex flex-col items-center">
+            <span className="text-sm text-gray-400 font-medium">Disponible</span>
+            {isSelected && <span className="text-xs text-indigo-600 font-bold mt-1 animate-bounce">Seleccionada</span>}
+          </div>
+        )}
+
+        {/* Legs of the silo */}
+        <div className="absolute -bottom-4 left-2 w-2 h-4 bg-gray-400"></div>
+        <div className="absolute -bottom-4 right-2 w-2 h-4 bg-gray-400"></div>
+
+        <div className="absolute -top-8 text-xs font-bold text-gray-500">Capacidad: {MAX_CAPACITY}kg</div>
+      </div>
+    );
+  };
+
+  return (
+    <div className="max-w-7xl mx-auto pb-20 space-y-6 animate-fade-in">
+
+      {/* Header */}
+      <div className="flex justify-between items-center bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-3">
+            <Factory className="w-8 h-8 text-indigo-600" />
+            Módulo de Vaciado (Fase 1)
+          </h1>
+          <p className="text-sm text-gray-500 mt-1">Inicio del proceso productivo - Carga de Guardiolas</p>
+        </div>
+        {onCancel && (
+          <button onClick={onCancel} className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md border border-gray-300 shadow-sm transition-colors">
+            <LogOut className="w-4 h-4" /> Salir
+          </button>
+        )}
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+        {/* Left Column: Orders List (3 cols) */}
+        <div className="lg:col-span-4 bg
