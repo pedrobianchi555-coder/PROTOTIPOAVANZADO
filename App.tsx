@@ -59,7 +59,7 @@ import { SupplierManagement } from './components/sustainable/SupplierManagement'
 import { TraceabilityReportView } from './components/sustainable/TraceabilityReportView';
 import { ProducerCapacityReport } from './components/sustainable/ProducerCapacityReport';
 import { SecurityCheckinForm } from './components/security/SecurityCheckinForm';
-import { CarroHProject } from './CarroHProject';
+import CarroHProject from './CarroHProject';
 
 import { CommercialDashboard } from './components/dashboards/CommercialDashboard';
 import { QualityDashboard } from './components/dashboards/QualityDashboard';

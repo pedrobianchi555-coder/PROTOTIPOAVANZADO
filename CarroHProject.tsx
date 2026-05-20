@@ -9,7 +9,7 @@ import { Package, Wrench, Zap, FileText } from 'lucide-react';
 
 type Tab = 'visor3d' | 'materiales' | 'especificaciones' | 'instrucciones';
 
-export const CarroHProject: React.FC = () => {
+const CarroHProject: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>('visor3d');
 
   const precioTotal = MATERIALES_CARRO_H.reduce(
