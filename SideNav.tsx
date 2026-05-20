@@ -39,8 +39,7 @@ import {
   FlaskConical,
   Globe,
   Leaf,
-  FilePlus2,
-  Hammer
+  FilePlus2
 } from 'lucide-react';
 
 interface Props {
@@ -68,7 +67,7 @@ type MenuGroup = {
 };
 
 export const SideNav: React.FC<Props> = ({ activeView, onChangeView, isOpen, onClose, userRole }) => {
-  const [expandedGroups, setExpandedGroups] = useState<string[]>(['principal', 'produccion', 'pdd', 'sustainable', 'materia_prima', 'calidad', 'logistica', 'comex', 'gerencia', 'proyectos', 'configuracion']);
+  const [expandedGroups, setExpandedGroups] = useState<string[]>(['principal', 'produccion', 'pdd', 'sustainable', 'materia_prima', 'calidad', 'logistica', 'comex', 'gerencia', 'configuracion']);
 
   const toggleGroup = (groupId: string) => {
     setExpandedGroups(prev =>
@@ -178,14 +177,6 @@ export const SideNav: React.FC<Props> = ({ activeView, onChangeView, isOpen, onC
         { id: 'clients-management', label: 'Clientes', icon: Users },
         { id: 'client-contracts', label: 'Contratos Clientes', icon: FileSignature },
         { id: 'coberturas-ny', label: 'Coberturas NY', icon: TrendingUp },
-      ]
-    },
-    {
-      title: 'PROYECTOS',
-      id: 'proyectos',
-      icon: Hammer,
-      items: [
-        { id: 'carro-h', label: 'Carro H - Guía Lineal', icon: Factory },
       ]
     },
     {

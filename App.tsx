@@ -59,7 +59,6 @@ import { SupplierManagement } from './components/sustainable/SupplierManagement'
 import { TraceabilityReportView } from './components/sustainable/TraceabilityReportView';
 import { ProducerCapacityReport } from './components/sustainable/ProducerCapacityReport';
 import { SecurityCheckinForm } from './components/security/SecurityCheckinForm';
-import CarroHProject from './CarroHProject';
 
 import { CommercialDashboard } from './components/dashboards/CommercialDashboard';
 import { QualityDashboard } from './components/dashboards/QualityDashboard';
@@ -252,9 +251,6 @@ const AppContent: React.FC = () => {
 
       // Security
       case 'security-checkin': return <SecurityCheckinForm userId={session.user.id} onCancel={() => setActiveView('dashboard')} />;
-
-      // Projects
-      case 'carro-h': return <CarroHProject />;
 
       default: return <DashboardView onChangeView={setActiveView} />;
     }
