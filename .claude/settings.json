@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "anthropic-cybersecurity-skills": {
+      "source": {
+        "source": "github",
+        "repo": "mukul975/Anthropic-Cybersecurity-Skills"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "cybersecurity-skills@anthropic-cybersecurity-skills": true
+  }
+}
